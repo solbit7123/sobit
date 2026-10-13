@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>솔빛 연구소 (V15.2 학부모 포털)</title>
+    <title>솔빛 연구소 (V15.3 학부모 포털)</title>
 
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
@@ -282,7 +282,7 @@
                 <li><b>학부모 포털</b> 승인된 학부모가 우리 아이 리포트·출석·가정 연계 메모를 확인합니다</li>
             </ul>
         </div>
-        <div class="lb-foot">V15.2 · 관리자 승인 후 이용할 수 있습니다</div>
+        <div class="lb-foot">V15.3 · 관리자 승인 후 이용할 수 있습니다</div>
     </div>
     <div class="login-side">
         <div class="login-card">
@@ -1717,10 +1717,7 @@
       ".read": "auth != null && root.child('users/'+auth.uid+'/role').val() === 'admin'",
       "$uid": {
         ".read": "auth != null && (auth.uid === $uid || root.child('users/'+auth.uid+'/role').val() === 'admin')",
-        ".write": "auth != null && (!root.child('users').hasChildren() || auth.uid === $uid || root.child('users/'+auth.uid+'/role').val() === 'admin')",
-        "approved": { ".write": "auth != null && (!root.child('users').hasChildren() || root.child('users/'+auth.uid+'/role').val() === 'admin')" },
-        "role": { ".write": "auth != null && (!root.child('users').hasChildren() || root.child('users/'+auth.uid+'/role').val() === 'admin')" },
-        "childSid": { ".write": "auth != null && (!root.child('users').hasChildren() || root.child('users/'+auth.uid+'/role').val() === 'admin')" }
+        ".write": "auth != null && (root.child('users/'+auth.uid+'/role').val() === 'admin' || !root.child('users').exists() || (auth.uid === $uid && newData.child('role').val() === data.child('role').val() && newData.child('approved').val() === data.child('approved').val() && newData.child('childSid').val() === data.child('childSid').val()))"
       }
     },
     "solbit_data": {
