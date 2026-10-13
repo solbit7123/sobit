@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>솔빛 연구소 (V15.1 학부모 포털)</title>
+    <title>솔빛 연구소 (V15.2 학부모 포털)</title>
 
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
@@ -282,7 +282,7 @@
                 <li><b>학부모 포털</b> 승인된 학부모가 우리 아이 리포트·출석·가정 연계 메모를 확인합니다</li>
             </ul>
         </div>
-        <div class="lb-foot">V15.1 · 관리자 승인 후 이용할 수 있습니다</div>
+        <div class="lb-foot">V15.2 · 관리자 승인 후 이용할 수 있습니다</div>
     </div>
     <div class="login-side">
         <div class="login-card">
@@ -693,11 +693,12 @@
 
     // ==================== 실제 Firebase 모듈 ====================
     const RealDB = {
-      _root: null, _usersRoot: null,
+      _root: null,
+      // [V15.2 수정] 로그인 직후(데이터 연결 전)에도 계정 정보를 읽을 수 있도록 항상 즉시 연결
+      get _usersRoot(){ return firebase.database().ref('users'); },
       init(onReady, onError){
         if(!firebase.apps.length) firebase.initializeApp(firebaseConfig);
         this._root = firebase.database().ref('solbit_data');
-        this._usersRoot = firebase.database().ref('users');
         this._root.on('value', snap=>onReady(snap.val()), err=>onError(err));
       },
       set(path, value){ let r = this._root; if(path) path.split('/').forEach(s=>r=r.child(s)); return r.set(value); },
