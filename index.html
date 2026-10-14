@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>솔빛 연구소 (V15.3 학부모 포털)</title>
+    <title>솔빛 언어심리연구소 (V18 센터관리)</title>
 
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
@@ -240,6 +240,67 @@
         .badge { padding: 3px 10px; border-radius: 12px; color: #fff; font-size: 11.5px; font-weight: 700; }
         .code-chip { font-family: monospace; font-size: 15px; font-weight: 800; letter-spacing: 2px; background: #f4f8fb; border: 1px dashed #aed6f1; color: var(--brand); padding: 4px 10px; border-radius: 8px; }
 
+
+        /* ===== V16 ===== */
+        .tabs { overflow-x: auto; flex-wrap: nowrap; scrollbar-width: thin; }
+        .tab-btn { white-space: nowrap; }
+        .svc-dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; }
+        .svc-chip { display: inline-block; color: #fff; font-size: 11.5px; font-weight: 700; padding: 2px 9px; border-radius: 10px; white-space: nowrap; }
+        .tag { display: inline-block; font-size: 11.5px; font-weight: 700; padding: 2px 9px; border-radius: 10px; white-space: nowrap; border: 1px solid transparent; }
+        .tag.info { background: #eaf2f8; color: #1f618d; border-color: #aed6f1; }
+        .tag.ok { background: #eafaf1; color: #1e8449; border-color: #abebc6; }
+        .tag.gray { background: #f4f6f7; color: #717d7e; border-color: #e5e8e8; }
+        .tag.warn { background: #fef5e7; color: #b9770e; border-color: #f8c471; }
+        .tag.purple { background: #f4ecf7; color: #6c3483; border-color: #d7bde2; }
+        .tag.risk-high { background: #c0392b; color: #fff; }
+        .tag.risk-mid { background: #e67e22; color: #fff; }
+        .tag.risk-low { background: #fcf3cf; color: #9a7d0a; border-color: #f7dc6f; }
+        .tag.risk-none { background: #eafaf1; color: #1e8449; border-color: #abebc6; }
+        .goal-card { background: #fff; border-radius: 12px; padding: 18px 20px; margin-bottom: 16px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border: 1px solid #edf0f2; border-left: 5px solid #3498db; }
+        .goal-card.warn { border-left-color: #e67e22; background: #fffdf8; }
+        .goal-head { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; margin-bottom: 10px; }
+        .goal-text { font-size: 15.5px; line-height: 1.6; color: #2c3e50; margin-bottom: 4px; }
+        .goal-text .g-c { color: #7f8c8d; } .goal-text .g-b { font-weight: 800; } .goal-text .g-k { color: #1f618d; font-weight: 600; }
+        .chk-ok { font-size: 12.5px; color: #1e8449; } .chk-bad { font-size: 12.5px; color: #c0392b; font-weight: 600; }
+        .banner.confid { background: #f4ecf7; border: 1px solid #d2b4de; color: #5b2c6f; }
+        .ov-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; }
+        .ov-grid label, .lb-s { display: block; font-size: 12.5px; font-weight: 700; color: #566573; margin-bottom: 5px; }
+        .ov-grid input, .ov-grid select, .ov-grid textarea { width: 100%; box-sizing: border-box; }
+        .chips { display: flex; gap: 6px; flex-wrap: wrap; }
+        .chip-btn { background: #fff; border: 1px solid #d5dbdb; color: #555; padding: 6px 12px; border-radius: 18px; font-size: 13px; font-weight: 600; cursor: pointer; display: inline-flex; align-items: center; gap: 5px; }
+        .chip-btn.on { background: var(--brand); color: #fff; border-color: var(--brand); }
+        .dash-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 14px; flex-wrap: wrap; gap: 8px; }
+        .dash-head h2 { margin: 0 0 4px; font-size: 19px; color: var(--brand); } .dash-head h2 small { font-size: 13px; color: #888; font-weight: 600; }
+        .dash-head span { font-size: 13px; color: #7f8c8d; }
+        .dash-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; margin-bottom: 20px; }
+        .dash-card { background: #fff; border-radius: 12px; padding: 16px 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); border-top: 4px solid #d5dbdb; }
+        .dash-card.warn { border-top-color: #e67e22; } .dash-card.risk { border-top-color: #8e44ad; background: #fdfaff; }
+        .dash-card h4 { margin: 0 0 10px; font-size: 14.5px; color: var(--brand); display: flex; align-items: center; gap: 6px; }
+        .dash-card .cnt { margin-left: auto; background: #f0f3f4; color: #555; font-size: 12px; padding: 1px 9px; border-radius: 10px; }
+        .dash-row { display: flex; align-items: center; gap: 8px; padding: 7px 0; border-bottom: 1px dashed #eee; font-size: 13.5px; flex-wrap: wrap; }
+        .dash-row:last-child { border-bottom: none; }
+        .dash-sub { font-size: 12px; color: #888; flex: 1; min-width: 120px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .dash-empty { font-size: 13px; color: #aaa; padding: 10px 0; }
+        .dlink { color: var(--brand); font-weight: 700; cursor: pointer; text-decoration: underline; text-decoration-color: #d5dbdb; }
+        .dlink:hover { color: var(--accent); }
+        .bar-row { display: flex; align-items: center; gap: 8px; font-size: 13px; margin: 7px 0; }
+        .bar-row > span { width: 104px; flex-shrink: 0; color: #555; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .bar-row > b { min-width: 30px; text-align: right; color: var(--brand); }
+        .prog { flex: 1; height: 10px; background: #eef1f3; border-radius: 6px; overflow: hidden; }
+        .prog i { display: block; height: 100%; border-radius: 6px; }
+        .soap-view { display: grid; gap: 6px; margin-top: 8px; font-size: 13.5px; line-height: 1.6; color: #444; }
+        .soap-view > div { background: #f8f9f9; border-radius: 6px; padding: 8px 10px; white-space: pre-line; }
+        .soap-view b { display: inline-block; width: 20px; color: #16a085; }
+        .soap-in { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; margin-top: 10px; }
+        .soap-in label { font-size: 12.5px; font-weight: 700; color: #16a085; display: block; margin-bottom: 4px; }
+        .soap-in textarea { min-height: 70px; width: 100%; box-sizing: border-box; }
+        .pg-item { border: 1px solid #edf0f2; border-radius: 10px; padding: 12px 14px; margin-bottom: 10px; background: #fcfdfd; }
+        .event-chip .svc-dot { margin-right: 4px; vertical-align: middle; border: 1px solid rgba(255,255,255,0.8); }
+        .event-info > span:first-child { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; min-width: 0; }
+        .event-info { flex-wrap: wrap; row-gap: 0; }
+        .dash-row .dash-sub { white-space: normal; }
+        .cal-ther { font-weight: 700; color: var(--brand); background: #f4f8fb; border-color: #aed6f1; }
+
         @media print {
             aside, .tabs, .no-print, header button, .mbk, #toast, .banner { display: none !important; }
             main { background: white; }
@@ -263,7 +324,7 @@
 </head>
 <body>
 <div id="loader">
-    <div style="font-size: 24px; font-weight: bold; color: #2c3e50; margin-bottom: 10px;">☁️ 솔빛 연구소 V15</div>
+    <div style="font-size: 24px; font-weight: bold; color: #2c3e50; margin-bottom: 10px;">☁️ 솔빛 연구소 V18</div>
     <div style="color: #7f8c8d;">학부모 포털 모듈 로딩 중...</div>
 </div>
 
@@ -282,7 +343,7 @@
                 <li><b>학부모 포털</b> 승인된 학부모가 우리 아이 리포트·출석·가정 연계 메모를 확인합니다</li>
             </ul>
         </div>
-        <div class="lb-foot">V15.3 · 관리자 승인 후 이용할 수 있습니다</div>
+        <div class="lb-foot">V18 · 관리자 승인 후 이용할 수 있습니다</div>
     </div>
     <div class="login-side">
         <div class="login-card">
@@ -380,11 +441,15 @@
     </header>
 
     <div class="tabs no-print" id="moduleTabs" style="display:none;">
-        <div class="tab-btn" onclick="switchTab('attention', this)">1. 주의력 훈련</div>
-        <div class="tab-btn" onclick="switchTab('wisc', this)">2. WISC-V 분석</div>
-        <div class="tab-btn" onclick="switchTab('counsel', this)">3. 상담/수업 일지</div>
-        <div class="tab-btn" onclick="switchTab('behavior', this)">4. 행동중재</div>
-        <div class="tab-btn" onclick="switchTab('dev', this)">5. 발달 종합평가</div>
+        <div class="tab-btn" onclick="switchTab('overview', this)">🗂 개요</div>
+        <div class="tab-btn" onclick="switchTab('goals', this)">🎯 치료 목표</div>
+        <div class="tab-btn" onclick="switchTab('counsel', this)">📝 회기·상담 일지</div>
+        <div class="tab-btn" id="tabBeh" onclick="switchTab('behavior', this)">📈 행동중재(ABA)</div>
+        <div class="tab-btn" id="tabNf" onclick="switchTab('nf', this)">🧠 뉴로피드백</div>
+        <div class="tab-btn" id="tabPsy" onclick="switchTab('psy', this)">💬 심리치료</div>
+        <div class="tab-btn" id="tabAtt" onclick="switchTab('attention', this)">👁 주의력 훈련</div>
+        <div class="tab-btn" onclick="switchTab('wisc', this)">WISC-V</div>
+        <div class="tab-btn" onclick="switchTab('dev', this)">🌱 발달평가</div>
         <div class="tab-btn tab-ai" onclick="switchTab('aireport', this)">🤖 AI 종합리포트</div>
     </div>
 
@@ -396,19 +461,84 @@
                 <div><b>⚠️ 데이터 보안 점검 필요</b>현재 Firebase 규칙이 열려 있어 누구나 데이터에 접근할 수 있습니다. 설정 → 보안 탭의 안내에 따라 규칙을 잠가 주세요.</div>
                 <button class="btn-orange bn-btn btn-sm" onclick="openSettings('sec')">설정 열기</button>
             </div>
+            <div id="dashWrap"></div>
             <div class="card">
                 <div class="calendar-ctrl">
                     <div><button class="btn-primary" onclick="changeMonth(-1)">◀</button><strong id="calYearMonth" style="font-size:18px; margin:0 15px;"></strong><button class="btn-primary" onclick="changeMonth(1)">▶</button></div>
                     <div class="cal-legend"><div class="legend-item"><div class="dot st-plan"></div>예정</div><div class="legend-item"><div class="dot st-present"></div>출석</div><div class="legend-item"><div class="dot st-absent"></div>결석</div><div class="legend-item"><div class="dot st-makeup"></div>보강완료</div></div>
-                    <div><button class="btn-green" onclick="addScheduleModal()">+ 일정</button></div>
+                    <div style="display:flex;gap:8px;align-items:center"><select id="calTherSel" class="cal-ther" onchange="setCalTher(this.value)"><option value="">👩‍⚕️ 전체 치료사</option></select><button class="btn-green" onclick="addScheduleModal()">+ 일정</button></div>
                 </div>
                 <div class="calendar-grid" id="calendarGrid"></div>
-                <p class="hint">* 상태 칩을 클릭하면 예정→출석→결석→보강으로 순환합니다. 드래그로 날짜 이동, <b>Ctrl+드래그</b>로 복사, 📄로 다른 날짜 복사.</p>
+                <p class="hint">* 일정 앞의 색 점은 서비스(치료 종류)입니다. 상태 칩을 클릭하면 예정→출석→결석→보강으로 순환합니다. 드래그로 날짜 이동, <b>Ctrl+드래그</b>로 복사, 📄로 다른 날짜 복사.</p>
             </div>
             <div class="card" id="makeupAlertBox" style="display:none; border-left: 5px solid var(--absent);">
                 <div class="card-title" style="margin-bottom:0; border:none; color: var(--absent);">⚠️ 보강 필요 수업</div>
                 <div id="makeupList" style="margin-top:10px; color:#555;"></div>
             </div>
+        </div>
+
+        <!-- V16: 개요 -->
+        <div id="view-overview" class="view-section"><div id="overviewWrap"></div></div>
+
+        <!-- V16: 치료 목표 -->
+        <div id="view-goals" class="view-section">
+            <div class="card no-print" style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;">
+                <span style="font-weight:800;color:var(--brand);">🎯 치료 목표</span>
+                <select id="goalFilter" onchange="renderGoals()" style="max-width:220px;"><option value="">전체 서비스</option></select>
+                <button class="btn-primary" onclick="openGoalModal()" style="margin-left:auto;">＋ 새 목표</button>
+                <p class="hint" style="width:100%;margin:0;">* 목표는 <b>조건 · 행동 · 기준</b> 세 가지가 들어가야 측정할 수 있습니다. 시작 수준과 목표일을 넣으면 점선 <b>목표선</b>이 그려지고, 측정값이 목표선 아래로 <b id="warnRunTxt">3</b>회 연속이면 진전도 경고가 뜹니다.</p>
+            </div>
+            <div id="goalList"></div>
+        </div>
+
+        <!-- V16: 뉴로피드백 -->
+        <div id="view-nf" class="view-section">
+            <div class="card no-print">
+                <div class="card-title">🧠 뉴로피드백 회기 기록</div>
+                <div class="ov-grid">
+                    <div><label>날짜</label><input type="date" id="nfDate"></div>
+                    <div><label>프로토콜</label><select id="nfProto"></select></div>
+                    <div><label>부착 부위</label><select id="nfSite"></select></div>
+                    <div><label>훈련 시간(분)</label><input type="number" id="nfMin" min="0" placeholder="30"></div>
+                    <div><label>보상률(%)</label><input type="number" id="nfReward" min="0" max="100" placeholder="예: 60"></div>
+                    <div><label>TBR 시작</label><input type="number" step="0.01" id="nfTbrPre" placeholder="예: 3.8"></div>
+                    <div><label>TBR 종료</label><input type="number" step="0.01" id="nfTbrPost" placeholder="예: 3.4"></div>
+                </div>
+                <div class="input-row" style="margin-top:10px;"><input type="text" id="nfNote" placeholder="관찰 메모 (예: 후반 졸림, 보상 소리에 잘 반응)" style="flex:1;min-width:200px;"><button id="btnNf" class="btn-primary" onclick="saveNf()">저장</button><button id="btnNfCancel" class="btn-gray" onclick="cancelNf()" style="display:none;">취소</button></div>
+                <p class="hint">* TBR(Theta/Beta 비율)은 장비에 표시되는 값을 그대로 적어 주세요. 비워 두어도 됩니다.</p>
+            </div>
+            <div class="card" style="border-left:5px solid #8e44ad;"><div class="card-title" style="color:#8e44ad;">📊 회기 분석</div><div id="nfAna" class="an-block"></div></div>
+            <div class="card"><div class="card-title">📈 보상률 · TBR 추이</div><div style="height:300px;"><canvas id="nfChart"></canvas></div></div>
+            <div class="card"><div class="card-title">회기 기록</div><div style="overflow-x:auto;"><table id="nfTable"><thead><tr><th>회기</th><th>날짜</th><th>프로토콜</th><th>부위</th><th>분</th><th>보상률</th><th>TBR 시작→종료</th><th>메모</th><th>관리</th></tr></thead><tbody></tbody></table></div></div>
+        </div>
+
+        <!-- V16: 심리치료 · 상담 -->
+        <div id="view-psy" class="view-section">
+            <div class="banner confid no-print"><div><b>🔒 비공개 임상 기록</b>이 탭의 내용은 학부모 포털과 AI(Gemini)로 <b>보내지지 않습니다.</b> 센터 내부 기록용입니다.</div></div>
+            <div class="card no-print">
+                <div class="card-title">💬 심리치료·상담 회기 기록 <span id="psySessNo" style="font-size:13px;color:#16a085;"></span></div>
+                <div class="ov-grid">
+                    <div><label>날짜</label><input type="date" id="psDate"></div>
+                    <div><label>회기 유형</label><select id="psType"><option>개인 회기</option><option>보호자 상담</option><option>가족 회기</option><option>집단 회기</option><option>심리평가</option></select></div>
+                    <div style="grid-column:span 2;"><label>회기 주제</label><input type="text" id="psTheme" placeholder="예: 학교에서의 불안 다루기"></div>
+                </div>
+                <div style="margin-top:12px;"><div class="lb-s">사용한 기법 (여러 개 선택)</div><div class="chips" id="psTech"></div></div>
+                <div class="ov-grid" style="margin-top:12px;">
+                    <div><label>고통 점수(SUDS) 시작 0~10</label><input type="number" id="psMoodPre" min="0" max="10"></div>
+                    <div><label>고통 점수(SUDS) 종료 0~10</label><input type="number" id="psMoodPost" min="0" max="10"></div>
+                    <div><label>위기 위험도</label><select id="psRisk"><option>없음</option><option>낮음</option><option>중간</option><option>높음</option></select></div>
+                    <div style="grid-column:span 2;"><label>위험 관련 메모·조치 (중간 이상이면 필수)</label><input type="text" id="psRiskNote" placeholder="예: 자해 사고 언급, 안전계획 작성, 보호자 연락"></div>
+                </div>
+                <div class="soap-in">
+                    <div><label>S — 주관적 (내담자·보호자가 한 말)</label><textarea id="psS"></textarea></div>
+                    <div><label>O — 객관적 (관찰한 모습·행동)</label><textarea id="psO"></textarea></div>
+                    <div><label>A — 평가 (치료사의 해석)</label><textarea id="psA"></textarea></div>
+                    <div><label>P — 계획 (다음 회기·과제)</label><textarea id="psP"></textarea></div>
+                </div>
+                <div style="text-align:right;margin-top:10px;"><button id="btnPsyCancel" class="btn-gray" onclick="cancelPsy()" style="display:none;">취소</button> <button id="btnPsy" class="btn-primary" onclick="savePsy()">저장</button></div>
+            </div>
+            <div class="card" id="psyChartCard" style="display:none;"><div class="card-title">📉 고통 점수(SUDS) 변화</div><div style="height:260px;"><canvas id="psyChart"></canvas></div></div>
+            <div class="card"><div class="card-title">회기 히스토리</div><div id="psyList"></div></div>
         </div>
 
         <!-- 1. 주의력 훈련 -->
@@ -480,7 +610,7 @@
                     <select id="snippetSelect" onchange="insertSnippet(this)"><option value="">— 선택하면 입력창에 삽입됩니다 —</option></select>
                     <button class="btn-gray btn-sm" onclick="openSnippetManager()">✎ 관리</button>
                 </div>
-                <div class="input-row"><input type="date" id="cnsDate"><select id="cnsType"><option value="수업관찰">👀 수업 태도</option><option value="학부모상담">🗣️ 학부모 상담</option><option value="과제부여">🏠 가정 연계</option></select></div>
+                <div class="input-row"><input type="date" id="cnsDate"><select id="cnsType"><option value="수업관찰">👀 수업 태도</option><option value="학부모상담">🗣️ 학부모 상담</option><option value="과제부여">🏠 가정 연계</option><option value="회기기록">🧩 회기 기록</option></select><select id="cnsSvc"></select></div>
                 <textarea id="cnsContent" placeholder="내용 입력... (위 '자주 쓰는 문구'에서 빠르게 입력 가능)"></textarea>
                 <div style="display:flex; justify-content:space-between; align-items:center; margin-top:10px; gap:10px; flex-wrap:wrap;">
                     <label style="display:flex; gap:6px; align-items:center; font-size:13px; color:#555; font-weight:600; margin:0;"><input type="checkbox" id="cnsShared" style="width:auto;">👨‍👩‍👧 학부모 포털에 공유</label>
@@ -497,6 +627,7 @@
                     <span style="font-size:12px; color:#888; font-weight:400;">기초선(A)에서 중재(B)로 전환하며 중재 효과를 확인하는 단일대상설계</span>
                 </div>
                 <div class="input-row">
+                    <select id="bhMethod" style="width:132px;"><option value="freq">빈도(횟수)</option><option value="dur">지속시간(분)</option><option value="occ">발생률(%)</option><option value="int">강도(1~5)</option></select>
                     <input type="text" id="bhName" placeholder="표적행동 (예: 자리이탈)" style="width:180px;">
                     <input type="text" id="bhDef" placeholder="조작적 정의 (예: 수업 중 엉덩이가 의자에서 떨어진 상태)" style="flex:1; min-width:200px;">
                     <button class="btn-green" onclick="addBehavior()">등록</button>
@@ -520,6 +651,15 @@
                     <tbody></tbody>
                 </table></div>
             </div>
+        </div>
+
+        <!-- V17: ABC 기록 -->
+        <div class="card" id="abcCard">
+            <div class="card-title">🧩 ABC 기록 <span style="font-size:12px; color:#888; font-weight:400;">선행사건(A) → 행동(B) → 결과(C) — 행동의 패턴을 찾는 관찰 기록</span></div>
+            <div id="abcSummary"></div>
+            <div style="text-align:right;margin-bottom:8px" class="no-print"><button class="btn-primary btn-sm" onclick="openAbcModal()">＋ ABC 기록</button></div>
+            <div style="overflow-x:auto;"><table id="abcTable"><thead><tr><th>날짜</th><th>시각</th><th>행동(B)</th><th>A 선행사건</th><th>C 결과</th><th>강도</th><th>메모</th><th></th></tr></thead><tbody></tbody></table></div>
+            <p class="hint">* 예: 「과제 요구(A) → 책상 밀고 이탈(B) → 과제를 치움(C)」이 반복되면, 과제를 작은 단계로 나누는 중재를 검토합니다.</p>
         </div>
 
         <!-- 5. 발달 -->
@@ -598,6 +738,7 @@
 
     // ==================== 데모용 Firebase/Auth 대체 모듈 ====================
     let DemoState = null;
+    function demoFresh(){ const x = demoLoad(); return (x && x.v >= 18) ? x : DemoSeed(); }
     function demoLoad(){ try { return JSON.parse(localStorage.getItem('solbit_demo_db')) || null; } catch(e){ return null; } }
     function demoSaveUser(){ try { const u = DemoState ? (DemoState.users||{}) : {}; localStorage.setItem('solbit_demo_users', JSON.stringify(u)); } catch(e){} }
     function demoLoadUsers(){ try { return JSON.parse(localStorage.getItem('solbit_demo_users')) || {}; } catch(e){ return {}; } }
@@ -605,7 +746,7 @@
     const DemoDB = {
       users: {},
       init(onReady, onError){
-        DemoState = demoLoad() || DemoSeed();
+        DemoState = demoFresh();
         this.users = demoLoadUsers();
         localStorage.setItem('solbit_demo_db', JSON.stringify(DemoState));
         setTimeout(()=>{ onReady(DemoState); this._usersCb && this._usersCb(this.users||{}); }, 60);
@@ -619,14 +760,14 @@
       },
       getUser(uid){ const users = demoLoadUsers(); if(!users[uid]){ users[uid] = {name:'데모 관리자', email:'demo@sobit.kr', role:'admin', approved:true}; try{ localStorage.setItem('solbit_demo_users', JSON.stringify(users)); }catch(e){} } return Promise.resolve(users[uid]); },
       setParentViews(map){ DemoState.parentViews = map; localStorage.setItem('solbit_demo_db', JSON.stringify(DemoState)); return Promise.resolve(); },
-      getParentView(uid){ if(!DemoState) DemoState = demoLoad() || DemoSeed(); if(!Object.keys(db.students||{}).length){ db.students = DemoState.students; db.schedule = DemoState.schedule||[]; } const stored = (DemoState.parentViews||{})[uid]; if(stored) return Promise.resolve(stored);
+      getParentView(uid){ if(!DemoState) DemoState = demoFresh(); if(!Object.keys(db.students||{}).length){ db.students = DemoState.students; db.schedule = DemoState.schedule||[]; } const stored = (DemoState.parentViews||{})[uid]; if(stored) return Promise.resolve(stored);
         const users = demoLoadUsers(); const u = users[uid];
         if(!u || u.role!=='parent' || !u.childSid) return Promise.resolve(null);
         const st = DemoState.students[u.childSid]; if(!st) return Promise.resolve(null);
         const nm = st.namePlain || st.maskName || '아이';
-        const schedule = (DemoState.schedule||[]).filter(s=>s.sid===u.childSid).sort((a,b)=>(b.date||'').localeCompare(a.date||'')).slice(0,20).map(s=>({date:s.date,time:s.time,status:s.status}));
+        const schedule = (DemoState.schedule||[]).filter(s=>s.sid===u.childSid).sort((a,b)=>(b.date||'').localeCompare(a.date||'')).slice(0,20).map(s=>({date:s.date,time:s.time,status:s.status,service:s.service?svcName(s.service):''}));
         const memos = (st.counsel||[]).filter(c=>c.shared).sort((a,b)=>(b.date||'').localeCompare(a.date||'')).slice(0,20).map(c=>({date:c.date,type:c.type,content:c.content}));
-        return Promise.resolve({ childName:nm, childMask:st.maskName||'', reportHtml: st.aiReport ? buildReportHtml(u.childSid, st.aiReport.period, {childName:nm}) : '', schedule, memos, updatedAt: Date.now() });
+        if(!db.center) db.center = DemoState.center; return Promise.resolve({ childName:nm, childMask:st.maskName||'', goals: parentGoals(u.childSid), reportHtml: st.aiReport ? buildReportHtml(u.childSid, st.aiReport.period, {childName:nm, forParent:true}) : '', schedule, memos, updatedAt: Date.now() });
       },
       setUsersAll(allUsers){ this.users = allUsers; demoSaveUser(); return Promise.resolve(); },
       subscribeUsers(cb){ this._usersCb = cb; return Promise.resolve(); },
@@ -634,42 +775,104 @@
     };
 
     function DemoSeed(){
-      const d = new Date(); const fmt = (off)=>{ const x=new Date(d); x.setDate(x.getDate()-off); return x.toISOString().slice(0,10); };
-      const now = Date.now();
-      const mk = (id, namePlain, att) => ({ id, namePlain, maskName: namePlain[0]+'**', parentCode: id==='s1'?'482913':'195748', attention: att, wisc:{scores:["98","105","112","102","88","90"], comment:"언어·시공간 대비 작업기억과 처리속도가 상대적으로 약함. 주의력 훈련 병행 권장.", date:fmt(120)}, counsel:[], dev:{scores:[4,3,3,4,3], comment:"", history:[]}, behaviors:[] });
-      const att = (cat, sub, times, errs) => times.map((t,i)=>({ id: now+i+Math.floor(Math.random()*1000), cat, sub, date: fmt((times.length-1-i)*7), time: t, error: errs[i], note: "" }));
-      const s1 = mk('s1','김하은', att('visual','기호쓰기',[320,300,285,260,240,215,200,182],[8,7,7,6,5,4,3,2])
-        .concat(att('auditory','음운변별',[300,295,290,285,283,280,278,276],[9,9,8,8,8,7,8,7])));
+      const d = new Date(); const fmt = (off)=>{ const x=new Date(d); x.setDate(x.getDate()-off); return dstr(x); };
+      const now = Date.now(); let seq = 0; const nid = () => now + (seq++);
+      const blank = () => ({ attention:[], wisc:{scores:[0,0,0,0,0,0], comment:'', date:''}, counsel:[], dev:{scores:[3,3,3,3,3], comment:'', history:[]}, behaviors:[], goals:[], nf:[], psy:[] });
+      const mk = (id, namePlain, code, profile) => ({ id, namePlain, maskName: namePlain[0]+'**', parentCode: code, ...blank(), profile });
+      const pts = (list) => list.map(([off, v, note])=>({ id:'p'+nid(), d: fmt(off), v, note: note||'' }));
+      const att = (cat, sub, times, errs) => times.map((t,i)=>({ id: nid(), cat, sub, date: fmt((times.length-1-i)*7), time: t, error: errs[i], note: "" }));
+
+      // ── s1 김하은 (아동 · 인지 + 뉴로피드백 + ABA) ──
+      const s1 = mk('s1','김하은','482913', { birth:'2017-05-12', ageGroup:'auto', services:['cog','nf','aba'], therapist:'th1', startDate: fmt(63), complaint:'수업 시간에 오래 앉아 있기 어렵고 과제를 끝까지 하지 못함.', dx:'ADHD(주의력결핍 우세형) 의심 — 소아정신과 의뢰 이력' });
+      s1.attention = att('visual','기호쓰기',[320,300,285,260,240,215,200,182],[8,7,7,6,5,4,3,2]).concat(att('auditory','음운변별',[300,295,290,285,283,280,278,276],[9,9,8,8,8,7,8,7]));
+      s1.wisc = {scores:["98","105","112","102","88","90"], comment:"언어·시공간 대비 작업기억과 처리속도가 상대적으로 약함. 주의력 훈련 병행 권장.", date:fmt(120)};
       s1.counsel = [
-        { id:now+1, date:fmt(28), type:'수업관찰', content:'수업 초반 10분간 집중 양호. 후반부로 갈수록 산만 행동 증가하나 자발적 복귀함.' },
-        { id:now+2, date:fmt(14), type:'학부모상담', content:'가정 연습 기록 공유. 주 3회 이상 가정 학습 권고드림. 보호자 협조 양호.', shared:true },
-        { id:now+3, date:fmt(3), type:'과제부여', content:'주간 과제: 기호쓰기 활동지 3회 배부. 다음 수업 시 제출 확인 필요.', shared:true }
+        { id:nid(), date:fmt(28), type:'수업관찰', service:'cog', content:'수업 초반 10분간 집중 양호. 후반부로 갈수록 산만 행동 증가하나 자발적 복귀함.' },
+        { id:nid(), date:fmt(14), type:'학부모상담', service:'cog', content:'가정 연습 기록 공유. 주 3회 이상 가정 학습 권고드림. 보호자 협조 양호.', shared:true },
+        { id:nid(), date:fmt(3), type:'과제부여', service:'aba', content:'주간 과제: 착석 20분 연습 + 칭찬 스티커판 사용. 다음 수업 시 기록지 확인.', shared:true }
       ];
-      s1.behaviors = [{ id:'b1', name:'자리이탈', definition:'수업 중 엉덩이가 의자에서 완전히 떨어진 상태', phase:'B',
-        records: (()=>{ const rec={}; const a=[4,3,4,3,5], b=[3,2,2,1,1,1]; a.forEach((c,i)=>rec[fmt(6*10-i*7)]={count:c, phase:'A', note:''}); b.forEach((c,i)=>rec[fmt(56-i*7)]={count:c, phase:'B', note:''}); return rec; })()
-      }];
-      s1.aiReport = { date: fmt(0), period:'30', text:'최근 1개월간 기호쓰기 수행시간이 꾸준히 감소하고 오류도 함께 줄어 활동 자동화가 진행 중입니다. 청각주의력은 개선 폭이 작아 청각 과제 난이도 조정과 반복 노출을 병행할 것을 제안드립니다. 자리이탈 행동은 중재 단계 진입 후 뚜렷하게 감소해 중재가 효과적인 것으로 보입니다.' };
-      const s2 = mk('s2','박도윤', att('visual','따라그리기',[280,262,240,225,210],[6,5,4,3,3]).concat(att('speed','기호찾기',[200,190,175,160,150],[5,4,4,3,2])));
-      s2.counsel = [{ id:now+4, date:fmt(7), type:'수업관찰', content:'지시 이해가 빠르고 과제 착수 즉시적. 소근육 활동에서 협응 오류 다소 관찰됨.' }];
+      s1.abc = [
+        { id:'a1', date:fmt(10), time:'15:20', bid:'b1', B:'책상을 밀고 복도로 나감', A:'과제·지시 요구', C:'언어적 안내', inten:'2 (중)', note:'안내 후 3분 뒤 복귀' },
+        { id:'a2', date:fmt(5), time:'14:35', bid:'b1', B:'의자에서 일어나 창가로 이동', A:'대기 시간', C:'촉구 단계 조정', inten:'1 (약)', note:'' },
+        { id:'a3', date:fmt(3), time:'15:05', bid:'b1', B:'책상을 밀고 복도로 나감', A:'과제·지시 요구', C:'요구 회피 성공', inten:'2 (중)', note:'과제를 치운 뒤 자리에 남음 — 과제 난이도 점검 필요' }
+      ];
+      s1.behaviors = [{ id:'b1', name:'자리이탈', definition:'수업 중 엉덩이가 의자에서 완전히 떨어진 상태', phase:'B', method:'freq',
+        records: (()=>{ const rec={}; const a=[4,3,4,3,5], b=[3,2,2,1,1,1]; a.forEach((c,i)=>rec[fmt(6*10-i*7)]={count:c, phase:'A', note:''}); b.forEach((c,i)=>rec[fmt(56-i*7)]={count:c, phase:'B', note:''}); rec[fmt(1)]={count:0, phase:'B', note:'발생 없음(관찰 회기)', none:true}; return rec; })() }];
+      s1.goals = [
+        { id:'g1', service:'cog', domain:'순서화·계획', cond:'그림 순서카드 4장이 제시되면', beh:'이야기 순서대로 카드를 배열한다', crit:'10회 중 8회 이상(80%), 3회기 연속', unit:'정반응률(%)', dir:'up', baseline:40, target:80, startDate:fmt(56), targetDate:fmt(-34), status:'진행', shared:true,
+          points: pts([[49,45],[42,50],[35,52],[28,58],[21,60],[14,63],[7,66],[0,70,'촉구 없이 7회 성공']]) },
+        { id:'g2', service:'aba', domain:'수업 참여', cond:'착석 과제 20분 동안', beh:'자리이탈 행동', crit:'회기당 1회 이하, 3회기 연속', unit:'횟수', dir:'down', baseline:5, target:1, startDate:fmt(42), targetDate:fmt(-48), status:'진행', shared:true,
+          points: pts([[35,4],[28,3],[21,3],[14,2],[7,2],[0,1]]) },
+        { id:'g3', service:'nf', domain:'주의 유지', cond:'뉴로피드백 30분 회기 중', beh:'보상 구간을 유지한다', crit:'보상률 70% 이상, 3회기 연속', unit:'정반응률(%)', dir:'up', baseline:40, target:70, startDate:fmt(63), targetDate:fmt(-27), status:'진행', shared:true,
+          points: pts([[56,46],[49,48],[42,49],[35,50],[28,50],[21,51],[14,52,'후반 졸림']]) }
+      ];
+      s1.nf = [[35,30,45,4.3,4.1],[31,30,48,4.2,4.0],[28,30,50,4.2,3.9],[24,30,52,4.1,3.9],[21,30,55,4.0,3.8],[17,30,57,4.0,3.7],[14,30,60,3.9,3.6],[10,30,62,3.9,3.5],[7,30,64,3.8,3.4],[3,30,66,3.7,3.3]]
+        .map(([off,min,rw,pre,post])=>({ id:'n'+nid(), date:fmt(off), proto:'Theta/Beta 비율(TBR) 훈련', site:'Cz', min, reward:rw, tbrPre:pre, tbrPost:post, note:'' }));
+      s1.aiReport = { date: fmt(0), period:'30', text:'최근 1개월간 순서화 과제 정반응률이 목표선보다 앞서 꾸준히 오르고 있으며, 기호쓰기 수행시간과 오류도 함께 줄어 과제 자동화가 진행 중입니다. 자리이탈 행동은 중재 단계 진입 후 뚜렷하게 감소했습니다. 뉴로피드백 보상률은 상승 중이나 목표 진행 속도보다는 느려 회기 구성 조정을 검토하고 있습니다.' };
+
+      // ── s2 박도윤 (유아 · 놀이 + 감각통합) ──
+      const s2 = mk('s2','박도윤','195748', { birth:'2021-03-03', ageGroup:'auto', services:['play','si'], therapist:'th2', startDate: fmt(49), complaint:'또래와 놀이할 때 차례를 기다리지 못하고 소리에 예민함.', dx:'감각 조절 어려움 — 어린이집 교사 권유로 내원' });
+      s2.counsel = [{ id:nid(), date:fmt(7), type:'회기기록', service:'play', content:'역할놀이에서 치료사에게 장난감을 먼저 건네는 모습이 처음 관찰됨. 큰 소리에는 여전히 귀를 막음.', shared:true }];
+      s2.goals = [
+        { id:'g4', service:'play', domain:'사회적 상호작용', cond:'자유놀이 상황에서', beh:'치료사와 차례를 주고받는다', crit:'5분 동안 3회 이상, 3회기 연속', unit:'횟수', dir:'up', baseline:0, target:3, startDate:fmt(49), targetDate:fmt(-41), status:'진행', shared:true,
+          points: pts([[42,0],[35,1],[28,1],[21,2],[14,3],[7,3],[0,4]]) },
+        { id:'g5', service:'si', domain:'자세·균형', cond:'그네 활동에서', beh:'도움 없이 앉은 자세를 유지한다', crit:'3분 이상', unit:'시간(분)', dir:'up', baseline:0.5, target:3, startDate:fmt(42), targetDate:fmt(-48), status:'진행', shared:true,
+          points: pts([[35,0.5],[28,1],[21,1],[14,1.5],[7,2]]) }
+      ];
+
+      // ── s3 이서준 (청소년 · 심리치료) ──
+      const s3 = mk('s3','이서준','730215', { birth:'2010-09-20', ageGroup:'auto', services:['psy'], therapist:'th3', startDate: fmt(35), complaint:'등교 전 복통과 불안, 친구 관계 위축.', dx:'불안 증상 — 학교 Wee클래스 의뢰' });
+      s3.goals = [{ id:'g6', service:'psy', domain:'불안 대처', cond:'불안한 상황이 떠오를 때', beh:'호흡·생각 바꾸기 기법을 스스로 사용하고 기록한다', crit:'주 3회 이상 자기기록', unit:'횟수', dir:'up', baseline:0, target:3, startDate:fmt(35), targetDate:fmt(-55), status:'진행', shared:false,
+        points: pts([[28,0],[21,1],[14,1],[7,2]]) }];
+      const sp = (off, theme, tech, pre, post, risk, riskNote, S, O, A, P) => ({ id:'ps'+nid(), date:fmt(off), type:'개인 회기', theme, tech, moodPre:pre, moodPost:post, risk, riskNote, S, O, A, P });
+      s3.psy = [
+        sp(35,'라포 형성 · 주 호소 탐색',['인지행동(CBT)'],7,6,'낮음','','학교 가기 전에 배가 아프다.','시선 접촉 적음, 짧게 대답.','신체화 경향의 불안 반응으로 보임.','불안 일지 소개'),
+        sp(28,'불안 신호 알아차리기',['인지행동(CBT)','이완·호흡'],7,5,'없음','','일지 2번 적었다.','호흡 연습에 적극 참여.','신체 신호 인식 향상.','호흡 연습 주 3회'),
+        sp(21,'자동적 사고 찾기',['인지행동(CBT)'],6,4,'없음','','친구들이 나를 싫어할 것 같다.','예시를 스스로 떠올림.','파국화 사고 확인.','생각 기록지'),
+        sp(14,'친구 관계 역할극',['인지행동(CBT)','사회기술'],6,4,'없음','','점심시간이 제일 힘들다.','역할극 중 웃음 보임.','사회 불안 요소 큼.','작은 대화 시도 1회'),
+        sp(7,'최근 스트레스 사건 다루기',['인지행동(CBT)','정서조절'],8,6,'중간','"다 그만두고 싶다" 표현 — 자해 의도는 부인. 안전계획 작성, 보호자에게 연락함.','시험 망쳐서 다 그만두고 싶다.','눈물 보임, 이후 안정.','급성 스트레스 반응, 지속 관찰 필요.','다음 회기 위험성 재평가, 보호자 상담 병행')
+      ];
+
+      // ── s4 최민지 (성인 · 심리상담) ──
+      const s4 = mk('s4','최민지','560391', { birth:'1992-11-08', ageGroup:'auto', services:['cns'], therapist:'th3', startDate: fmt(21), complaint:'직장 스트레스로 인한 수면 문제와 무기력.', dx:'' });
+      s4.goals = [{ id:'g7', service:'cns', domain:'스트레스 관리', cond:'업무 스트레스를 느낀 날', beh:'감정 일지를 작성한다', crit:'주 4회 이상', unit:'횟수', dir:'up', baseline:1, target:4, startDate:fmt(21), targetDate:fmt(-60), status:'진행', shared:false,
+        points: pts([[14,1],[7,2],[0,3]]) }];
+      s4.psy = [
+        { ...sp(21,'주 호소 탐색',['마음챙김'],6,5,'없음','','요즘 잠을 못 잔다.','차분하게 이야기함.','소진 상태로 보임.','수면 일지'), type:'개인 회기' },
+        { ...sp(14,'스트레스 요인 정리',['인지행동(CBT)'],6,4,'없음','','팀장과의 관계가 제일 힘들다.','구체적인 상황 묘사 가능.','대인 스트레스가 핵심.','감정 일지 주 3회'), type:'개인 회기' },
+        { ...sp(7,'경계 설정 연습',['인지행동(CBT)','이완·호흡'],5,3,'없음','','일지를 쓰니 조금 정리된다.','표정 밝아짐.','자기 관찰 능력 향상.','거절 표현 연습'), type:'개인 회기' }
+      ];
+
+      // ── 일정 (서비스 · 치료사 포함) ──
+      const S = (off, sid, time, service, therapist, status) => ({ id:nid(), sid, date:fmt(off), time, service, therapist, dur:50, status });
+      const schedule = [];
+      [21,14,7].forEach(o=>{ schedule.push(S(o,'s1','14:00','cog','th1', o===14?'absent':'present'), S(o,'s1','15:00','nf','th1','present'), S(o,'s2','15:00','play','th2','present'), S(o,'s3','16:00','psy','th3','present'), S(o,'s4','19:00','cns','th3','present')); });
+      schedule.push(S(12,'s1','14:00','cog','th1','makeup'));
+      schedule.push(S(0,'s1','14:00','cog','th1','present'), S(0,'s1','15:00','nf','th1','plan'), S(0,'s2','15:00','play','th2','plan'), S(0,'s2','16:00','si','th2','plan'), S(0,'s3','16:00','psy','th3','plan'), S(0,'s4','19:00','cns','th3','plan'));
+      [-7,-14].forEach(o=>{ schedule.push(S(o,'s1','14:00','cog','th1','plan'), S(o,'s2','15:00','play','th2','plan'), S(o,'s3','16:00','psy','th3','plan')); });
+
       return {
-        v: 15,
+        v: 18,
         crypto: { enabled: true, salt: 'ZGVtbw==', check: 'DEMO_CHECK' },
-        students: { s1, s2 },
-        schedule: [
-          { id: now+10, sid:'s1', date: fmt(0), time:'14:00', status:'present' },
-          { id: now+11, sid:'s1', date: fmt(7), time:'14:00', status:'present' },
-          { id: now+12, sid:'s1', date: fmt(14), time:'14:00', status:'absent' },
-          { id: now+13, sid:'s2', date: fmt(1), time:'16:00', status:'plan' },
-          { id: now+14, sid:'s2', date: fmt(8), time:'16:00', status:'present' }
-        ],
+        center: { services: JSON.parse(JSON.stringify(DEFAULT_SERVICES)), therapists: [ {id:'th1', name:'정솔빛', custom:true}, {id:'th2', name:'김지원', custom:true}, {id:'th3', name:'이하늘', custom:true} ], warnRun: 3 },
+        students: { s1, s2, s3, s4 },
+        schedule,
         snippets: [
-          { id:now+20, cat:'수업관찰', text:'수업 초반 10분간 집중 상태 양호. 자리 이탈 없음.' },
-          { id:now+21, cat:'수업관찰', text:'지시를 즉시 이해하고 과제를 착수함.' },
-          { id:now+22, cat:'수업관찰', text:'시간 흐름 후반부 피로로 오류 증가 → 중간 휴식 필요해 보임.' },
-          { id:now+23, cat:'학부모상담', text:'가정에서의 수행 시간과 오류 개수를 공유함. 주 3회 이상 가정 연습 권고.' },
-          { id:now+24, cat:'학부모상담', text:'상담 내용 요약과 앞으로의 목표를 문자로 재안내드림.' },
-          { id:now+25, cat:'과제부여', text:'주간 과제: 기호쓰기 활동지 3회 (1회당 10분) 배부함.' },
-          { id:now+26, cat:'과제부여', text:'가정 연습 기록지 배부 — 다음 수업 시 제출 확인.' }
+          { id:nid(), cat:'수업관찰', text:'수업 초반 10분간 집중 상태 양호. 자리 이탈 없음.' },
+          { id:nid(), cat:'수업관찰', text:'지시를 즉시 이해하고 과제를 착수함.' },
+          { id:nid(), cat:'수업관찰', text:'시간 흐름 후반부 피로로 오류 증가 → 중간 휴식 필요해 보임.' },
+          { id:nid(), cat:'학부모상담', text:'가정에서의 수행 시간과 오류 개수를 공유함. 주 3회 이상 가정 연습 권고.' },
+          { id:nid(), cat:'학부모상담', text:'상담 내용 요약과 앞으로의 목표를 문자로 재안내드림.' },
+          { id:nid(), cat:'과제부여', text:'주간 과제: 기호쓰기 활동지 3회 (1회당 10분) 배부함.' },
+          { id:nid(), cat:'과제부여', text:'가정 연습 기록지 배부 — 다음 수업 시 제출 확인.' }
+        ],
+        accessLog: [
+          { t: fmt(0)+' 09:05', uid:'demo-admin', name:'데모 관리자', role:'admin', kind:'로그인', detail:'관리자 로그인' },
+          { t: fmt(1)+' 18:42', uid:'demo-admin', name:'데모 관리자', role:'admin', kind:'실명 잠금 해제', detail:'' },
+          { t: fmt(2)+' 14:10', uid:'demo-admin', name:'데모 관리자', role:'admin', kind:'계정 승인', detail:'학부모 계정' },
+          { t: fmt(2)+' 14:09', uid:'demo-admin', name:'데모 관리자', role:'admin', kind:'로그인', detail:'관리자 로그인' },
+          { t: fmt(3)+' 10:22', uid:'demo-admin', name:'데모 관리자', role:'admin', kind:'학생 추가', detail:'최민지' },
+          { t: fmt(5)+' 09:15', uid:'demo-admin', name:'데모 관리자', role:'admin', kind:'백업 내려받기', detail:'전체 데이터 JSON' }
         ],
         users: {}
       };
@@ -770,13 +973,13 @@
     function openModal(html){ document.getElementById('modalBody').innerHTML = html; document.getElementById('mbk').classList.add('open'); }
     function closeModal(){ document.getElementById('mbk').classList.remove('open'); }
     function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-    function todayStr(){ return new Date().toISOString().slice(0,10); }
+    function todayStr(){ return dstr(new Date()); } // [V16] 한국시간 기준
     function dstr(d){ return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`; }
     function myRole(){ return (me && me.profile && (me.profile.role || me.profile.requestedRole)) || 'teacher'; }
 
     // ==================== 데이터 접근 헬퍼 ====================
     function saveAll(){ return DB.set('', db); }
-    function saveStudent(sid){ publishParentViewsSoon(); return DB.set('students/'+sid, db.students[sid]); }
+    function saveStudent(sid){ publishParentViewsSoon(); const p = DB.set('students/'+sid, db.students[sid]); if(IS_DEMO && curStudent===sid){ renderStudentList(); reRenderCurrentTab(); } return p; } // [V17] 데모 모드 저장 후 즉시 갱신
     function saveSchedule(){ return DB.set('schedule', db.schedule); }
     function saveSnippets(){ return DB.set('snippets', db.snippets||[]); }
 
@@ -839,7 +1042,7 @@
         lcError(map[code] || (err&&err.msg) || '오류가 발생했습니다: '+(code||err), showGuide || code==='' );
       } finally { btn.disabled=false; btn.innerText = lcIsSignup?'가입 요청':'로그인'; }
     }
-    function doLogout(){ AUTH.logout().catch(()=>{}); if(IS_DEMO){ location.hash=''; } location.reload(); }
+    function doLogout(){ logAccess('로그아웃'); AUTH.logout().catch(()=>{}); if(IS_DEMO){ location.hash=''; } location.reload(); }
 
 
     function showScreen(name){
@@ -856,7 +1059,7 @@
       document.getElementById('ubName').innerText = me.profile.name || me.email;
       document.getElementById('ubRole').innerText = me.profile.role==='admin' ? '관리자(원장/센터장)' : '교사/연구자';
       document.getElementById('ubAvatar').innerText = (me.profile.name||'?')[0];
-      DB.subscribeUsers(u => { usersMap = u||{}; if(currentUserView()==='pendingList') renderUsersTable(); publishParentViewsSoon(); });
+      DB.subscribeUsers(u => { usersMap = u||{}; syncTherapistsFromUsers(); if(currentUserView()==='pendingList') renderUsersTable(); publishParentViewsSoon(); });
       DB.init(onData, onDataError);
     }
     function onDataError(err){
@@ -864,8 +1067,8 @@
       else { document.getElementById('loader').innerHTML = '<div style="color:#c0392b; font-weight:700;">데이터 로드 실패<br><span style="font-size:13px; color:#888;">'+esc(String(err&&err.message||err))+'</span></div>'; }
     }
     function onData(val){
-      if(!val){ db = { v:15, students:{}, schedule:[], snippets:[] }; } else { db = val; }
-      db.students = db.students || {}; db.schedule = db.schedule || []; db.snippets = db.snippets || [];
+      if(!val){ db = { v:18, students:{}, schedule:[], snippets:[], accessLog:[] }; } else { db = val; }
+      db.students = db.students || {}; db.schedule = db.schedule || []; db.snippets = db.snippets || []; db.accessLog = db.accessLog || [];
       document.getElementById('loader').style.display = 'none';
       if(IS_DEMO){ db.crypto = db.crypto || {enabled:false}; }
       if(!db.v || db.v < 15){ needMigration().then(()=>{ afterDataReady(); }); }
@@ -886,9 +1089,10 @@
       Object.keys(db.students).forEach(sid=>{ const s=db.students[sid]; if(!s.maskName){ s.maskName = s.namePlain ? maskName(s.namePlain) : '??'; } });
       renderStudentList(); renderCalendar(); renderSnippetSelect();
       if(curStudent && !db.students[curStudent]) curStudent = null;
-      if(curStudent){ const t=document.querySelector('.tab-btn'); if(t) t.click(); }
+      dataReady = true; syncTherapistsFromUsers();
+      if(curStudent){ applyTabVisibility(); document.getElementById('headerSub').innerText = subLineOf(curStudent); reRenderCurrentTab(); } // [V16] 저장할 때마다 첫 탭으로 튀던 문제 수정
       // 데모: 첫 학생 자동 선택 + 해시 탭
-      if(IS_DEMO && !curStudent){ const first = Object.keys(db.students)[0]; if(first){ selectStudent(first, false); const h = location.hash.replace('#view-',''); const map=['attention','wisc','counsel','behavior','dev','aireport']; if(map.includes(h)){ const btn=[...document.querySelectorAll('.tab-btn')].find(b=>b.getAttribute('onclick')&&b.getAttribute('onclick').includes(h)); if(btn) btn.click(); } else if(h==='schedule'){ goHome(); } else { document.querySelector('.tab-btn').click(); } } }
+      if(IS_DEMO && !curStudent){ const first = Object.keys(db.students)[0]; if(first){ selectStudent(first, false); const h = location.hash.replace('#view-',''); const map=['overview','goals','nf','psy','attention','wisc','counsel','behavior','dev','aireport']; if(map.includes(h)){ const btn=[...document.querySelectorAll('.tab-btn')].find(b=>b.getAttribute('onclick')&&b.getAttribute('onclick').includes(h)); if(btn) btn.click(); } else if(h==='schedule'){ goHome(); } else { document.querySelector('.tab-btn').click(); } } }
       if(db.crypto && db.crypto.enabled && !sessionKey && !IS_DEMO){ /* 잠금 유지 */ }
       if(db.crypto && !db.crypto.enabled && Object.values(db.students).some(s=>s.namePlain)){ toast('⚠️ 실명 암호화가 설정되지 않았습니다. 설정 → 보안 탭에서 설정하세요.', true); }
       if(IS_DEMO && !DEMO_BY_URL){ toast('인터넷 연결 또는 Firebase 로딩에 실패해 데모 모드로 열었습니다.'); }
@@ -902,12 +1106,12 @@
       firebase.database().ref('users').once('value').then(()=>{ document.getElementById('openRulesBanner').style.display='flex'; }).catch(()=>{});
     }
 
-    // ==================== 마이그레이션 (V13.5 → V14) ====================
+    // ==================== 마이그레이션 (V13.5 → V16) ====================
     function needMigration(){
       return new Promise(resolve=>{
-        openModal(`<h3>🔄 데이터 구조 업그레이드 (V13.5 → V14)</h3>
+        openModal(`<h3>🔄 데이터 구조 업그레이드 (V13.5 → V16)</h3>
           <p style="font-size:14px; line-height:1.8; color:#444;">
-          V14에서는 학생을 <b>고유 ID</b>로 관리하고, <b>실명 암호화</b>·<b>행동중재</b>·<b>AI 리포트</b> 기능이 추가됩니다.<br>
+          새 버전에서는 학생을 <b>고유 ID</b>로 관리하고, <b>실명 암호화</b>·<b>행동중재</b>·<b>AI 리포트</b> 기능이 추가됩니다.<br>
           진행하면 기존 데이터 전체가 <b>backup_v135</b> 경로에 자동 백업된 뒤 변환됩니다.</p>
           <div class="mo-foot"><button class="btn-gray" onclick="location.reload()">취소</button><button class="btn-primary" onclick="doMigration().then(()=>{closeModal();resolve();})">업그레이드 진행</button></div>`);
       });
@@ -966,6 +1170,7 @@
         const check = await CRYPTO.decrypt(db.crypto.check, key);
         if(check !== 'solbit-ok'){ toast('암호가 올바르지 않습니다', true); return; }
         sessionKey = key;
+        logAccess('실명 잠금 해제');
         await unlockNames();
         closeModal(); renderStudentList(); renderCalendar();
         const chip = document.getElementById('lockChip'); chip.className='lock-chip open'; chip.innerText='🔓 실명 열람 가능';
@@ -975,6 +1180,7 @@
     function toggleRealView(){
       if(db.crypto && db.crypto.enabled && !sessionKey){ openUnlockModal(); return; }
       VIEW_REAL = !VIEW_REAL;
+      if(VIEW_REAL) logAccess('실명 보기', '마스킹 해제(실명 열람 모드)');
       const btn = document.getElementById('eyeToggle');
       btn.innerText = VIEW_REAL ? '실명 보기 중' : '마스킹 보기';
       btn.classList.toggle('on', VIEW_REAL);
@@ -1001,11 +1207,14 @@
       db.students[sid] = {
         id: sid, namePlain: (!db.crypto || !db.crypto.enabled) ? n : null, nameEnc,
         maskName: maskName(n), parentCode: pCode,
-        attention: [], wisc: {scores:[0,0,0,0,0,0], comment:'', date:''}, counsel: [], dev:{scores:[3,3,3,3,3], comment:'', history:[]}, behaviors: []
+        attention: [], wisc: {scores:[0,0,0,0,0,0], comment:'', date:''}, counsel: [], dev:{scores:[3,3,3,3,3], comment:'', history:[]}, behaviors: [],
+        profile: { services: [], ageGroup: 'auto', startDate: todayStr() }, goals: [], nf: [], psy: []
       };
       if(db.crypto && db.crypto.enabled) nameCache[sid] = n;
       document.getElementById('newStudentName').value='';
       saveStudent(sid);
+      logAccess('학생 추가', n);
+      selectStudent(sid); toast('등록했습니다. 개요 탭에서 생년월일·이용 서비스·담당 치료사를 입력해 주세요.');
     }
     function renderStudentList(){
       const list = document.getElementById('studentList'); list.innerHTML='';
@@ -1015,7 +1224,7 @@
       ids.forEach(sid=>{
         const div = document.createElement('div');
         div.className = `student-item ${sid===curStudent?'active':''}`;
-        div.innerHTML = `<span>${esc(getStudentName(sid, true))}</span><span class="del-btn" onclick="deleteStudent('${sid}',event)">✕</span>`;
+        div.innerHTML = `<span>${esc(getStudentName(sid, true))}${studentMeta(sid)}</span><span class="del-btn" onclick="deleteStudent('${sid}',event)">✕</span>`;
         div.onclick = (e)=>{ if(e.target.className!=='del-btn') selectStudent(sid); };
         list.appendChild(div);
       });
@@ -1025,6 +1234,7 @@
       const nm = getStudentName(sid, true);
       if(confirm(`[${nm}] 학생의 모든 기록이 삭제됩니다. 정말 삭제할까요?`)){
         if(confirm('한 번 삭제하면 되돌릴 수 없습니다. 백업이 필요하면 설정→백업에서 먼저 내려받으세요. 삭제할까요?')){
+          logAccess('학생 삭제', nm);
           delete db.students[sid];
           db.schedule = db.schedule.filter(s=>s.sid!==sid);
           DB.set('students/'+sid, null).then(()=>saveSchedule());
@@ -1036,20 +1246,25 @@
       curStudent = name;
       document.getElementById('headerTitle').innerText = `${getStudentName(name, true)} 관리`;
       document.getElementById('moduleTabs').style.display = 'flex';
-      document.getElementById('headerSub').innerText = '실명 마스킹 기본 · 인쇄 시 마스킹 유지';
+      document.getElementById('headerSub').innerText = subLineOf(name);
+      applyTabVisibility();
       renderStudentList();
       if(refresh) document.querySelector('.tab-btn').click();
       else reRenderCurrentTab();
     }
     function currentTabName(){
       const active = document.querySelector('.tab-btn.active');
-      if(!active) return 'attention';
+      if(!active) return 'overview';
       const oc = active.getAttribute('onclick')||'';
-      const m = oc.match(/switchTab\('([^']+)'/); return m ? m[1] : 'attention';
+      const m = oc.match(/switchTab\('([^']+)'/); return m ? m[1] : 'overview';
     }
     function currentUserView(){ return currentTabName(); }
     function reRenderCurrentTab(){
       const t = currentTabName();
+      if(t==='overview') renderOverview();
+      if(t==='goals') renderGoals();
+      if(t==='nf') renderNf();
+      if(t==='psy') renderPsy();
       if(t==='attention') renderAttention();
       if(t==='wisc') renderWisc();
       if(t==='counsel') renderCounsel();
@@ -1081,9 +1296,9 @@
         parents.forEach(([uid,u])=>{
           const st = db.students[u.childSid]; if(!st) return;
           const nm = realNameOf(u.childSid) || st.maskName || '아이';
-          const sched = (db.schedule||[]).filter(s=>s.sid===u.childSid).sort((a,b)=>(b.date||'').localeCompare(a.date||'')).slice(0,20).map(s=>({date:s.date,time:s.time,status:s.status}));
+          const sched = (db.schedule||[]).filter(s=>s.sid===u.childSid).sort((a,b)=>(b.date||'').localeCompare(a.date||'')).slice(0,20).map(s=>({date:s.date,time:s.time,status:s.status,service:s.service?svcName(s.service):''}));
           const memos = (st.counsel||[]).filter(c=>c.shared).sort((a,b)=>(b.date||'').localeCompare(a.date||'')).slice(0,20).map(c=>({date:c.date,type:c.type,content:c.content}));
-          pv[uid] = { childName: nm, childMask: st.maskName||'', reportHtml: st.aiReport ? buildReportHtml(u.childSid, st.aiReport.period, {childName:nm, forParent:true}) : '', schedule: sched, memos, updatedAt: Date.now() };
+          pv[uid] = { childName: nm, childMask: st.maskName||'', goals: parentGoals(u.childSid), reportHtml: st.aiReport ? buildReportHtml(u.childSid, st.aiReport.period, {childName:nm, forParent:true}) : '', schedule: sched, memos, updatedAt: Date.now() };
         });
         await DB.setParentViews(pv);
       } catch(e){ /* 학부모 공유 실패는 무음 */ }
@@ -1102,7 +1317,12 @@
         const counts = (pv.schedule||[]).reduce((a,s)=>{ a[s.status]=(a[s.status]||0)+1; return a; },{});
         const reportSec = pv.reportHtml ? pv.reportHtml : '<p style="color:#888;">아직 생성된 리포트가 없습니다. 리포트가 게시되면 이곳에서 확인할 수 있습니다.</p>';
         const memoSec = (pv.memos&&pv.memos.length) ? pv.memos.map(m=>`<div class="memo-item"><div class="mi-date">📅 ${esc(m.date)} · ${esc(m.type||'가정연계')}</div><div class="mi-body">${esc(m.content)}</div></div>`).join('') : '<p style="color:#888;">공유된 가정 연계 메모가 아직 없습니다.</p>';
-        const schedSec = (pv.schedule&&pv.schedule.length) ? pv.schedule.map(s=>{ const t=stBadgeKo(s.status); return `<div class="sched-row"><span style="width:110px;">📅 ${esc(s.date)}</span><span style="width:70px;">${esc(s.time||'')}</span><span class="badge" style="background:${t[1]};">${t[0]}</span></div>`; }).join('') : '<p style="color:#888;">수업 기록이 없습니다.</p>';
+        const schedSec = (pv.schedule&&pv.schedule.length) ? pv.schedule.map(s=>{ const t=stBadgeKo(s.status); return `<div class="sched-row"><span style="width:110px;">📅 ${esc(s.date)}</span><span style="width:70px;">${esc(s.time||'')}</span>${s.service?`<span style="min-width:90px;font-size:13px;color:#555;">${esc(s.service)}</span>`:''}<span class="badge" style="background:${t[1]};">${t[0]}</span></div>`; }).join('') : '<p style="color:#888;">수업 기록이 없습니다.</p>';
+        const goalSec = (pv.goals&&pv.goals.length) ? pv.goals.map(g=>{ const sl={done:['달성 🎉','#27ae60'],adjust:['계획 조정 중','#e67e22'],going:['진행 중','#3498db']}[g.status]||['진행 중','#3498db'];
+            return `<div class="pg-item"><div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-bottom:6px;"><span class="svc-chip" style="background:${esc(g.color)}">${esc(g.service)}</span><span class="badge" style="background:${sl[1]};">${sl[0]}</span></div>
+              <div style="font-size:14.5px;line-height:1.6;"><b>${esc(g.cond)} ${esc(g.beh)}</b> <span style="color:#7f8c8d;">— ${esc(g.crit)}</span></div>
+              ${(g.pct!==null&&g.pct!==undefined)?`<div class="bar-row"><span>진행 정도</span><div class="prog"><i style="width:${Number(g.pct)}%;background:${esc(g.color)};"></i></div><b>${Number(g.pct)}%</b></div>`:''}
+              <div style="font-size:12.5px;color:#888;">처음 ${esc(g.baseline)} → 최근 ${esc(g.latest)}${g.latestDate?' ('+esc(g.latestDate)+')':''} · 목표 ${esc(g.target)} ${esc(g.unit)}</div></div>`; }).join('') : '<p style="color:#888;">공유된 치료 목표가 아직 없습니다.</p>';
         w.innerHTML = `
           <div class="parent-child">
             <div class="pc-ava">${esc((pv.childName||'아이')[0])}</div>
@@ -1116,13 +1336,14 @@
               <span class="badge" style="background:#e74c3c;">결석 ${counts.absent||0}</span>
             </div>
           </div>
+          <div class="parent-sec"><h3>🎯 치료 목표 진행</h3>${goalSec}</div>
           <div class="parent-sec"><h3>📊 우리 아이 통합 리포트</h3>${reportSec}</div>
           <div class="parent-sec"><h3>📩 가정 연계 메모</h3>${memoSec}</div>
           <div class="parent-sec"><h3>📅 수업 일정 · 출석</h3>${schedSec}</div>`;
       }).catch(()=>{ document.getElementById('parentWrap').innerHTML = '<div class="parent-sec" style="text-align:center; color:#c0392b;">자료를 불러오지 못했습니다.</div>'; });
     }
     function toggleShare(id){ const l=db.students[curStudent].counsel; const x=l.find(c=>c.id===id); if(x){ x.shared=!x.shared; saveStudent(curStudent); } }
-    function approveParent(uid){ const sel=document.getElementById('sel_'+uid); if(!sel||!sel.value) return toast('연결할 학생을 선택하세요', true); DB.onUserChange(uid,{approved:true, role:'parent', childSid:sel.value}).then(()=>{ toast('학부모 계정을 승인했습니다'); renderUsersTable(); publishParentViewsSoon(); }); }
+    function approveParent(uid){ const sel=document.getElementById('sel_'+uid); if(!sel||!sel.value) return toast('연결할 학생을 선택하세요', true); DB.onUserChange(uid,{approved:true, role:'parent', childSid:sel.value}).then(()=>{ logAccess('계정 승인', '학부모 계정'); toast('학부모 계정을 승인했습니다'); renderUsersTable(); publishParentViewsSoon(); }); }
     function renderParentLinkTab(){
         const body=document.getElementById('setBody'); if(!body) return;
         const needCode = Object.keys(db.students).filter(sid=>!db.students[sid].parentCode);
@@ -1166,16 +1387,17 @@
       const today = todayStr();
       for(let d=1; d<=new Date(y,m+1,0).getDate(); d++){
         const dStr=`${y}-${String(m+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`;
-        const evs = db.schedule.filter(s => s.date === dStr).sort((a, b) => (a.time||'').localeCompare(b.time||''));
+        const evs = db.schedule.filter(s => s.date === dStr && (!calTher || s.therapist===calTher)).sort((a, b) => (a.time||'').localeCompare(b.time||''));
         let h=`<div class="cal-cell" ondrop="dropEvent(event, '${dStr}')" ondragover="allowDrop(event)" ondragleave="leaveDrop(event)"><span class="cal-date ${dStr===today?'today-mark':''}">${d}${dStr===today?' ●':''}</span>`;
         evs.forEach(e=>{
           if(e.status==='absent' && e.sid) mkList.push(`${getStudentName(e.sid, true)} (${e.date})`);
-          h+=`<div class="event-chip ${stMap[e.status]}" draggable="true" ondragstart="dragEvent(event, ${e.id})"><div class="event-info" onclick="toggleStatus(${e.id}, event)"><span>${esc(getStudentName(e.sid, true))}</span><span style="font-size:10px; opacity:0.8; margin-left:3px;">${esc(e.time||'')}</span></div><div class="event-actions"><span class="icon-btn" onclick="editScheduleModal(${e.id}, event)" title="수정">✎</span><span class="icon-btn" onclick="delSchedule(${e.id}, event)" title="삭제">✕</span></div></div>`;
+          h+=`<div class="event-chip ${stMap[e.status]}" draggable="true" ondragstart="dragEvent(event, ${e.id})"><div class="event-info" onclick="toggleStatus(${e.id}, event)" title="${esc(svcName(e.service))}${e.therapist?' · '+esc(thName(e.therapist)):''}"><span>${e.service?`<span class="svc-dot" style="background:${svcColor(e.service)}"></span>`:''}${esc(getStudentName(e.sid, true))}</span><span style="font-size:10px; opacity:0.8; margin-left:3px;">${esc(e.time||'')}</span></div><div class="event-actions"><span class="icon-btn" onclick="editScheduleModal(${e.id}, event)" title="수정">✎</span><span class="icon-btn" onclick="delSchedule(${e.id}, event)" title="삭제">✕</span></div></div>`;
         });
         grid.innerHTML+=h+`</div>`;
       }
       document.getElementById('makeupAlertBox').style.display=mkList.length>0?'block':'none';
       document.getElementById('makeupList').innerText=mkList.join(', ');
+      fillTherFilter(); renderDashboard();
     }
     function allowDrop(ev) { ev.preventDefault(); ev.currentTarget.classList.add('drag-over'); }
     function leaveDrop(ev) { ev.currentTarget.classList.remove('drag-over'); }
@@ -1184,37 +1406,36 @@
       ev.preventDefault(); ev.currentTarget.classList.remove('drag-over');
       const id = ev.dataTransfer.getData("text/plain");
       const o = db.schedule.find(x => x.id == id);
-      if (o) { if (ev.ctrlKey) { db.schedule.push({ id: Date.now(), sid: o.sid, date: tDate, time: o.time, status: 'plan' }); } else { if (o.date !== tDate) o.date = tDate; } saveSchedule(); }
+      if (o) { if (ev.ctrlKey) { db.schedule.push({ id: Date.now(), sid: o.sid, date: tDate, time: o.time, status: 'plan', service: o.service||'', therapist: o.therapist||'', dur: o.dur||50 }); } else { if (o.date !== tDate) o.date = tDate; } saveSchedule(); }
     }
     function addScheduleModal(){
-      if(Object.keys(db.students).length===0) return alert('먼저 학생을 등록해 주세요.');
-      openModal(`<h3>＋ 수업 일정 추가</h3>
-        <div class="mo-row"><label>학생</label><select id="mSchedStudent">${Object.keys(db.students).map(sid=>`<option value="${sid}">${esc(getStudentName(sid, true))}</option>`).join('')}</select></div>
-        <div class="mo-row"><label>날짜</label><input type="date" id="mSchedDate" value="${todayStr()}"></div>
-        <div class="mo-row"><label>시간</label><input type="time" id="mSchedTime" value="14:00"></div>
-        <div class="mo-foot"><button class="btn-gray" onclick="closeModal()">취소</button><button class="btn-green" onclick="saveScheduleItem(null)">추가</button></div>`);
+      if(Object.keys(db.students).length===0) return alert('먼저 내담자를 등록해 주세요.');
+      const sid = curStudent && db.students[curStudent] ? curStudent : Object.keys(db.students)[0];
+      openModal(schedModalHtml({ sid, therapist: calTher||'' }, true));
     }
     function editScheduleModal(id, e){
-      e.stopPropagation();
+      if(e) e.stopPropagation();
       const s = db.schedule.find(x=>x.id===id); if(!s) return;
-      openModal(`<h3>✎ 일정 수정</h3>
-        <div class="mo-row"><label>학생</label><select id="mSchedStudent">${Object.keys(db.students).map(sid=>`<option value="${sid}" ${sid===s.sid?'selected':''}>${esc(getStudentName(sid, true))}</option>`).join('')}</select></div>
-        <div class="mo-row"><label>날짜</label><input type="date" id="mSchedDate" value="${s.date}"></div>
-        <div class="mo-row"><label>시간</label><input type="time" id="mSchedTime" value="${esc(s.time||'14:00')}"></div>
-        <div class="mo-row"><label>상태 (현재: ${stKo[s.status]||'예정'})</label><select id="mSchedStatus"><option value="plan" ${s.status==='plan'?'selected':''}>예정</option><option value="present" ${s.status==='present'?'selected':''}>출석</option><option value="absent" ${s.status==='absent'?'selected':''}>결석</option><option value="makeup" ${s.status==='makeup'?'selected':''}>보강완료</option></select></div>
-        <div class="mo-foot"><button class="btn-gray" onclick="closeModal()">취소</button><button class="btn-primary" onclick="saveScheduleItem(${id})">저장</button></div>`);
+      openModal(schedModalHtml(s, false));
     }
     function saveScheduleItem(id){
-      const sid = document.getElementById('mSchedStudent').value;
-      const date = document.getElementById('mSchedDate').value;
-      const time = document.getElementById('mSchedTime').value || '14:00';
-      if(!date) return toast('날짜를 선택하세요', true);
-      if(id===null){ db.schedule.push({ id: Date.now(), sid, date, time, status:'plan' }); }
-      else {
-        const s = db.schedule.find(x=>x.id===id); if(!s) return;
-        Object.assign(s, { sid, date, time, status: document.getElementById('mSchedStatus').value });
+      const g = k => (document.getElementById(k)||{}).value || '';
+      const o = { sid: g('mSchedStudent'), date: g('mSchedDate'), time: g('mSchedTime') || '14:00', service: g('mSchedSvc'), therapist: g('mSchedTher'), dur: Number(g('mSchedDur')) || 50 };
+      if(!o.date) return toast('날짜를 선택하세요', true);
+      const box = document.getElementById('mSchedClash');
+      let items;
+      if(id===null){ const n = Number(g('mSchedRepeat')) || 1; items = []; for(let i=0;i<n;i++) items.push({ ...o, id: Date.now()+i, date: addDays(o.date, i*7), status: 'plan' }); }
+      else { items = [{ ...o, id, status: g('mSchedStatus') || 'plan' }]; }
+      const clashes = items.flatMap(it => schedClash(it, id).map(c => `${koDate(it.date)} ${c.time} ${getStudentName(c.sid, true)}`));
+      if(clashes.length && box && box.dataset.ok!=='1'){
+        box.dataset.ok = '1';
+        box.innerHTML = `<div class="chk-bad">⚠ ${esc(thName(o.therapist))} 선생님 시간이 겹칩니다: ${esc(clashes.slice(0,5).join(', '))}${clashes.length>5?' 외 '+(clashes.length-5)+'건':''}<br>그래도 저장하려면 버튼을 한 번 더 누르세요.</div>`;
+        return;
       }
+      if(id===null) db.schedule.push(...items);
+      else { const s = db.schedule.find(x=>x.id===id); if(!s) return; Object.assign(s, items[0]); }
       closeModal(); saveSchedule();
+      if(items.length>1) toast(`매주 반복 일정 ${items.length}건을 추가했습니다`);
     }
     function toggleStatus(id, e){ if(e) e.stopPropagation(); const s = db.schedule.find(x => x.id === id); if(s){ const nxt={'plan':'present','present':'absent','absent':'makeup','makeup':'plan'}; s.status=nxt[s.status]; saveSchedule(); } }
     function delSchedule(id, e) { e.stopPropagation(); if(confirm("삭제?")) { db.schedule = db.schedule.filter(x => x.id !== id); saveSchedule(); } }
@@ -1440,17 +1661,18 @@
     function addCounsel(){
         const d=document.getElementById('cnsDate').value, t=document.getElementById('cnsType').value, c=document.getElementById('cnsContent').value;
         if(d&&c){ if(!db.students[curStudent].counsel) db.students[curStudent].counsel=[];
-            db.students[curStudent].counsel.push({id:Date.now(),date:d,type:t,content:c,shared:document.getElementById('cnsShared').checked}); saveStudent(curStudent); document.getElementById('cnsContent').value=''; document.getElementById('cnsShared').checked=false; }
+            db.students[curStudent].counsel.push({id:Date.now(),date:d,type:t,service:(document.getElementById('cnsSvc')||{}).value||'',content:c,shared:document.getElementById('cnsShared').checked}); saveStudent(curStudent); document.getElementById('cnsContent').value=''; document.getElementById('cnsShared').checked=false; }
         else toast('날짜와 내용을 입력하세요', true);
     }
     function renderCounsel(){
         const l=document.getElementById('counselList'); l.innerHTML='';
+        const cs=document.getElementById('cnsSvc'); if(cs){ const cur=cs.dataset.sid===curStudent?cs.value:(prof(curStudent).services[0]||''); cs.innerHTML=svcOptions(cur,true,'— 서비스 —'); cs.dataset.sid=curStudent; }
         const d=(getStudent(curStudent).counsel||[]).slice();
-        const colorMap={'학부모상담':'#e74c3c','수업관찰':'#3498db','과제부여':'#27ae60'};
+        const colorMap={'학부모상담':'#e74c3c','수업관찰':'#3498db','과제부여':'#27ae60','회기기록':'#8e44ad'};
         d.sort((a,b)=>new Date(b.date)-new Date(a.date));
         if(!d.length){ l.innerHTML='<div style="text-align:center; color:#999; padding:30px;">아직 기록이 없습니다.</div>'; return; }
         d.forEach(x=>{ const c=colorMap[x.type]||'#999';
-            l.innerHTML+=`<div class="log-entry" style="border-left-color:${c}"><div class="log-header"><span>📅 ${esc(x.date)}</span><span class="log-badge" style="background:${c}">${esc(x.type)}</span></div><div class="log-content">${esc(x.content)}</div><div style="text-align:right"><span style="cursor:pointer;font-size:12px;color:${x.shared?'#27ae60':'#ccc'};font-weight:${x.shared?'700':'400'}" onclick="toggleShare(${x.id})">${x.shared?'🔗 가정공유중':'🔒 미공유'}</span> · <span style="cursor:pointer;font-size:12px;color:#ccc" onclick="delCns(${x.id})">삭제</span></div></div>`; });
+            l.innerHTML+=`<div class="log-entry" style="border-left-color:${c}"><div class="log-header"><span>📅 ${esc(x.date)}${x.service?` <span class="svc-chip" style="background:${svcColor(x.service)}">${esc(svcName(x.service))}</span>`:''}</span><span class="log-badge" style="background:${c}">${esc(x.type)}</span></div><div class="log-content">${esc(x.content)}</div><div style="text-align:right"><span style="cursor:pointer;font-size:12px;color:${x.shared?'#27ae60':'#ccc'};font-weight:${x.shared?'700':'400'}" onclick="toggleShare(${x.id})">${x.shared?'🔗 가정공유중':'🔒 미공유'}</span> · <span style="cursor:pointer;font-size:12px;color:#ccc" onclick="delCns(${x.id})">삭제</span></div></div>`; });
     }
     function delCns(id){ if(confirm('삭제?')){ db.students[curStudent].counsel=db.students[curStudent].counsel.filter(x=>x.id!==id); saveStudent(curStudent); } }
     function openSnippetManager(){ openSettings('snippetMgmt'); }
@@ -1461,7 +1683,7 @@
         if(!n) return toast('표적행동 이름을 입력하세요', true);
         const st=getStudent(curStudent);
         st.behaviors = st.behaviors||[];
-        st.behaviors.push({ id:'b'+Date.now(), name:n, definition:d, phase:'A', records:{} });
+        st.behaviors.push({ id:'b'+Date.now(), name:n, definition:d, phase:'A', method:document.getElementById('bhMethod').value||'freq', records:{} });
         document.getElementById('bhName').value=''; document.getElementById('bhDef').value='';
         saveStudent(curStudent);
     }
@@ -1469,13 +1691,16 @@
         const b = getStudent(curStudent).behaviors.find(x=>x.id===bid); if(!b) return;
         const key = todayStr();
         const rec = b.records[key] || { count:0, phase:b.phase, note:'' };
-        rec.count++; b.records[key] = rec;
+        rec.none=false; rec.count++; if(rec.note==='발생 없음(관찰 회기)') rec.note=''; b.records[key] = rec;
         saveStudent(curStudent); toast(`${b.name} +1 (오늘 ${rec.count}회)`);
     }
     function undoTap(bid){
         const b = getStudent(curStudent).behaviors.find(x=>x.id===bid); if(!b) return;
         const key = todayStr(); const rec = b.records[key];
-        if(rec && rec.count>0){ rec.count--; if(rec.count===0) delete b.records[key]; saveStudent(curStudent); }
+        if(!rec) return;
+        if(rec.none){ delete b.records[key]; }
+        else if(rec.count>0){ rec.count--; if(rec.count===0) delete b.records[key]; }
+        saveStudent(curStudent);
     }
     function switchPhase(bid){
         const b = getStudent(curStudent).behaviors.find(x=>x.id===bid); if(!b) return;
@@ -1486,33 +1711,46 @@
     function renderBehavior(){
         const st=getStudent(curStudent); if(!st) return;
         st.behaviors = st.behaviors||[];
+        renderAbc();
         const taps=document.getElementById('behaviorTaps');
         if(!st.behaviors.length){ taps.innerHTML='<span style="color:#999;">등록된 표적행동이 없습니다. 위에서 등록해 주세요.</span>'; document.getElementById('bhChartCard').style.display='none'; document.getElementById('bhListCard').style.display='none'; return; }
         taps.innerHTML = st.behaviors.map(b=>{
             const today = b.records[todayStr()];
+            const m = bhM(b);
+            let input='';
+            if(m==='freq') input = `<button class="tap-btn ${b.phase==='A'?'phase-a':'phase-b'}" onclick="tapBehavior('${b.id}')">+1 기록<br><span style="font-size:11px; font-weight:400;">한 번 누르면 1회</span></button>`;
+            else if(m==='dur') input = `<div style="display:flex;gap:5px;justify-content:center;align-items:center;"><input type="number" step="0.1" min="0" id="bhIn_${b.id}" placeholder="분" style="width:90px;text-align:right;"><button class="btn-primary btn-sm" onclick="saveBhValue('${b.id}')">저장</button></div>`;
+            else if(m==='occ') input = `<div style="display:flex;gap:4px;justify-content:center;align-items:center;flex-wrap:wrap;"><input type="number" min="1" id="bhTry_${b.id}" placeholder="시도" style="width:62px;text-align:right;"><span style="font-size:12px;">중</span><input type="number" min="0" id="bhOcc_${b.id}" placeholder="발생" style="width:62px;text-align:right;"><button class="btn-primary btn-sm" onclick="saveBhValue('${b.id}')">→%</button></div>`;
+            else input = `<div style="display:flex;gap:5px;justify-content:center;align-items:center;"><select id="bhIn_${b.id}">${[1,2,3,4,5].map(n=>`<option value="${n}">${n} (강도)</option>`).join('')}</select><button class="btn-primary btn-sm" onclick="saveBhValue('${b.id}')">저장</button></div>`;
+            const noBtn = m!=='int' ? `<button class="btn-gray btn-sm" onclick="markNoOccur('${b.id}')">○ 발생 없음</button>` : '';
+            const todayTxt = today ? bhFmt(b, today.count) + (today.none?' <span class="tag gray">발생 없음</span>':'') : '기록 전';
             return `<div class="tap-card">
-                <div class="tc-name">${esc(b.name)}</div>
+                <div class="tc-name">${esc(b.name)} <span class="tag gray" style="font-size:10.5px;">${esc(bhMethodKo(b))}</span></div>
                 <div class="tc-def">${esc(b.definition||'정의 미입력')}</div>
-                <button class="tap-btn ${b.phase==='A'?'phase-a':'phase-b'}" onclick="tapBehavior('${b.id}')">+1 기록<br><span style="font-size:11px; font-weight:400;">한 번 누르면 1회</span></button>
-                <div class="tc-today">오늘 <b>${today?today.count:0}</b>회 · <span class="phase-chip ${b.phase==='A'?'a':'b'}">${b.phase==='A'?'기초선 A':'중재 B'}</span></div>
-                <div style="margin-top:8px; display:flex; gap:6px; justify-content:center;">
-                    <button class="btn-gray btn-sm" onclick="undoTap('${b.id}')">−1 취소</button>
+                ${input}
+                <div class="tc-today">오늘 <b>${todayTxt}</b> · <span class="phase-chip ${b.phase==='A'?'a':'b'}">${b.phase==='A'?'기초선 A':'중재 B'}</span></div>
+                <div style="margin-top:8px; display:flex; gap:6px; justify-content:center; flex-wrap:wrap;">
+                    ${m==='freq'?`<button class="btn-gray btn-sm" onclick="undoTap('${b.id}')">−1 취소</button>`:''}
+                    ${noBtn}
                     <button class="btn-blue btn-sm" onclick="switchPhase('${b.id}')">${b.phase==='A'?'중재(B) 전환':'기초선(A)으로'}</button>
                     <button class="btn-red btn-sm" onclick="delBehavior('${b.id}')">삭제</button>
                 </div>
             </div>`;
         }).join('');
-        // 첫 번째(또는 선택된) 행동 그래프
+        // 첫 번째 행동 그래프
         const b = st.behaviors[0];
         document.getElementById('bhChartCard').style.display='block';
         document.getElementById('bhListCard').style.display='block';
-        document.getElementById('bhChartTitle').innerHTML = `📈 ${esc(b.name)} — 빈도 추이 <span class="phase-chip ${b.phase==='A'?'a':'b'}" style="margin-left:8px;">현재 ${b.phase==='A'?'기초선':'중재'}</span>`;
+        const m = bhM(b);
+        document.getElementById('bhChartTitle').innerHTML = `📈 ${esc(b.name)} — ${esc(bhMethodKo(b))} 추이 <span class="phase-chip ${b.phase==='A'?'a':'b'}" style="margin-left:8px;">현재 ${b.phase==='A'?'기초선':'중재'}</span>`;
         const dates = Object.keys(b.records).sort();
         const aData = dates.map(d=> b.records[d].phase==='A' ? b.records[d].count : null);
         const bData = dates.map(d=> b.records[d].phase==='B' ? b.records[d].count : null);
-        const aVals = aData.filter(v=>v!==null), bVals = bData.filter(v=>v!==null);
+        const aVals = aData.filter(v=>v!==null), bVals = bVals0(bData);
         const aMean = mean(aVals);
         if(charts.bh) charts.bh.destroy();
+        const yTitle = {freq:'회/일', dur:'분/일', occ:'발생률(%)', int:'강도(1~5)'}[m];
+        const yOpt = { beginAtZero:true, title:{display:true, text:yTitle} }; if(m==='occ') yOpt.max = 100;
         charts.bh = new Chart(document.getElementById('bhChart'), {
             type:'line',
             data:{ labels: dates.map(koDate),
@@ -1521,32 +1759,33 @@
                     { label:'중재(B)', data:bData, borderColor:'#2e6bd6', tension:0, spanGaps:false, pointRadius:4 },
                     ...(aVals.length>=2 ? [{ label:'기초선 평균', data:dates.map((d,i)=> aData[i]!==null ? aMean.toFixed(1) : null), borderColor:'#95a5a6', borderDash:[6,5], pointRadius:0 }] : [])
                 ]},
-            options:{ responsive:true, maintainAspectRatio:false, scales:{ y:{ beginAtZero:true, title:{display:true, text:'회/일'} } } }
+            options:{ responsive:true, maintainAspectRatio:false, scales:{ y: yOpt } }
         });
         // 통계
         const statHtml = (label, vals)=>{ if(!vals.length) return ''; const med=median(vals); const stab = Math.round(vals.filter(v=>Math.abs(v-med)<=med*0.2).length/vals.length*100);
             return `<div class="stat-item"><div class="si-v">${vals.length}회기</div><div class="si-l">${label} 회기 수</div></div>
-            <div class="stat-item"><div class="si-v">${mean(vals).toFixed(1)}회</div><div class="si-l">${label} 평균</div><div class="si-note">중앙값 ${med}</div></div>
+            <div class="stat-item"><div class="si-v">${mean(vals).toFixed(1)}${bhUnit(b)}</div><div class="si-l">${label} 평균</div><div class="si-note">중앙값 ${med}</div></div>
             <div class="stat-item"><div class="si-v">${Math.min(...vals)}~${Math.max(...vals)}</div><div class="si-l">범위</div></div>
-            <div class="stat-item"><div class="si-v">${label.includes('기초선')?stab+'%':'-'}</div><div class="si-l">안정성(참고)</div>${label.includes('기촌선')?'':'<div class="si-note">'+(label.includes('기초선')?'중앙값 ±20% 내 회기 비율':'')+'</div>'}</div>`; };
+            <div class="stat-item"><div class="si-v">${label.includes('기초선')?stab+'%':'-'}</div><div class="si-l">안정성(참고)</div>${label.includes('기초선')?'':'<div class="si-note">'+(label.includes('기초선')?'중앙값 ±20% 내 회기 비율':'')+'</div>'}</div>`; };
         let stats = statHtml('기초선', aVals) + statHtml('중재', bVals);
         if(aVals.length && bVals.length){
             const chg = pctChange(aMean, mean(bVals));
             stats += `<div class="stat-item" style="background:#eaf2f8; border-color:#aed6f1;"><div class="si-v">${chg>0?'+':''}${chg}%</div><div class="si-l">중재 vs 기초선</div><div class="si-note">${chg<0?'중재 후 행동이 감소했습니다':chg>0?'중재 후 행동이 증가했습니다':'변화 없음'}</div></div>`;
         }
         document.getElementById('bhStats').innerHTML = stats;
-        document.getElementById('bhHint').innerHTML = '* 안정성 판정은 그래프와 함께 교사/연구자가 최종 판단합니다. 자료점 기준은 단일대상설계 관행(단계당 3개 이상, 5개 이상 권장)을 따릅니다.';
+        document.getElementById('bhHint').innerHTML = '* 「○ 발생 없음」도 소중한 기록입니다 — 행동이 사라지는 과정을 보여 줍니다. 안정성 판정은 그래프와 함께 전문가가 최종 판단합니다.';
         // 히스토리 테이블
         const tb=document.querySelector('#bhTable tbody'); tb.innerHTML='';
         if(!dates.length){ tb.innerHTML='<tr class="empty-row"><td colspan="5">기록이 없습니다. 위 버튼으로 오늘 기록을 시작하세요.</td></tr>'; return; }
         dates.slice().reverse().forEach(d=>{ const r=b.records[d];
-            tb.innerHTML+=`<tr><td>${esc(d)}</td><td><span class="phase-chip ${r.phase==='A'?'a':'b'}">${r.phase==='A'?'기초선':'중재'}</span></td><td><strong>${r.count}회</strong></td><td>${esc(r.note||'')}</td><td><span onclick="editBhRecord('${b.id}','${d}')" style="cursor:pointer; margin-right:8px;" title="수정">✎</span><span onclick="delBhRecord('${b.id}','${d}')" style="color:red; cursor:pointer;" title="삭제">✕</span></td></tr>`; });
+            tb.innerHTML+=`<tr><td>${esc(d)}</td><td><span class="phase-chip ${r.phase==='A'?'a':'b'}">${r.phase==='A'?'기초선':'중재'}</span></td><td><strong>${esc(bhFmt(b, r.count))}</strong>${r.none?' <span class="tag gray">발생 없음</span>':''}</td><td style="text-align:left;font-size:12px">${esc(r.note||'')}</td><td><span onclick="editBhRecord('${b.id}','${d}')" style="cursor:pointer; margin-right:8px;" title="수정">✎</span><span onclick="delBhRecord('${b.id}','${d}')" style="color:red; cursor:pointer;" title="삭제">✕</span></td></tr>`; });
     }
+    function bVals0(arr){ return arr.filter(v=>v!==null); }
     function editBhRecord(bid, date){
         const b = getStudent(curStudent).behaviors.find(x=>x.id===bid); if(!b) return;
         const r = b.records[date]; if(!r) return;
         openModal(`<h3>✎ 기록 수정 — ${esc(b.name)} (${esc(date)})</h3>
-            <div class="mo-row"><label>횟수</label><input type="number" id="mBhCount" value="${r.count}" min="0"></div>
+            <div class="mo-row"><label>값 (${esc(bhMethodKo(b))} · 단위 ${esc(bhUnit(b))})</label><input type="number" id="mBhCount" value="${r.count}" min="0"></div>
             <div class="mo-row"><label>단계</label><select id="mBhPhase"><option value="A" ${r.phase==='A'?'selected':''}>기초선(A)</option><option value="B" ${r.phase==='B'?'selected':''}>중재(B)</option></select></div>
             <div class="mo-row"><label>비고</label><input type="text" id="mBhNote" value="${esc(r.note||'')}"></div>
             <div class="mo-foot"><button class="btn-gray" onclick="closeModal()">취소</button><button class="btn-primary" onclick="saveBhRecord('${bid}','${date}')">저장</button></div>`);
@@ -1558,6 +1797,88 @@
     }
     function delBhRecord(bid, date){ if(confirm('삭제?')){ const b=getStudent(curStudent).behaviors.find(x=>x.id===bid); delete b.records[date]; saveStudent(curStudent); } }
     function delBehavior(bid){ if(confirm('표적행동과 모든 기록이 삭제됩니다. 계속할까요?')){ const st=getStudent(curStudent); st.behaviors=st.behaviors.filter(x=>x.id!==bid); saveStudent(curStudent); } }
+
+
+    // ==================== V17: 행동 기록 방식 4가지 · 발생 없음 · ABC 기록 ====================
+    const BH_METHODS = { freq:'빈도(횟수)', dur:'지속시간(분)', occ:'발생률(%)', int:'강도(1~5)' };
+    const BH_UNITS = { freq:'회', dur:'분', occ:'%', int:'점' };
+    function bhM(b){ return BH_METHODS[b.method] ? b.method : 'freq'; }
+    function bhMethodKo(b){ return BH_METHODS[bhM(b)]; }
+    function bhUnit(b){ return BH_UNITS[bhM(b)]; }
+    function bhFmt(b, v){ if(v===undefined||v===null||v==='') return '-'; return `${v}${bhUnit(b)}`; }
+    function saveBhValue(bid){
+      const b = getStudent(curStudent).behaviors.find(x=>x.id===bid); if(!b) return;
+      const key = todayStr(); const m = bhM(b);
+      const old = b.records[key];
+      const rec = (old && !old.none) ? old : { count:0, phase:b.phase, note:'' };
+      rec.phase = b.phase;
+      if(m==='dur'){
+        const v = Number(document.getElementById('bhIn_'+bid).value);
+        if(!(v>0)) return toast('지속시간(분)을 입력하세요', true);
+        rec.count = v; if(old && old.none) rec.note = '';
+      } else if(m==='occ'){
+        const t = Number(document.getElementById('bhTry_'+bid).value), o = Number(document.getElementById('bhOcc_'+bid).value);
+        if(!(t>0)) return toast('시도 횟수를 입력하세요', true);
+        if(o<0 || o>t) return toast('발생 횟수가 시도보다 클 수 없습니다', true);
+        rec.count = Math.round(o/t*100); rec.note = `${t}회 시도 중 ${o}회 발생`;
+      } else {
+        const v = Number(document.getElementById('bhIn_'+bid).value);
+        if(!(v>=1)) return toast('강도를 선택하세요', true);
+        rec.count = v;
+      }
+      rec.none = false; b.records[key] = rec;
+      saveStudent(curStudent); toast(`${b.name} — 오늘 ${bhFmt(b, rec.count)} 기록`);
+    }
+    function markNoOccur(bid){
+      const b = getStudent(curStudent).behaviors.find(x=>x.id===bid); if(!b) return;
+      const key = todayStr(); const ex = b.records[key];
+      if(ex && !ex.none && ex.count>0 && !confirm('오늘 기록이 있습니다. 0(발생 없음)으로 바꿀까요?')) return;
+      b.records[key] = { count:0, phase:b.phase, note:'발생 없음(관찰 회기)', none:true };
+      saveStudent(curStudent); toast(`${b.name} — 오늘 「발생 없음」으로 기록했습니다`);
+    }
+
+    const ABC_A = ['과제·지시 요구','활동 전환','대기 시간','소음·혼잡','감각 자극','관심 요구 거절','물건·장난감 분쟁','기타'];
+    const ABC_C = ['언어적 안내','무시(계획된)','촉구 단계 조정','휴식·자극 제공','요구 회피 성공','원하는 것 제공','보고·통지','기타'];
+    function renderAbc(){
+      const st=getStudent(curStudent); if(!st || !document.getElementById('abcTable')) return; st.abc=st.abc||[];
+      const l=st.abc.slice().sort((a,b)=>(b.date+(b.time||'')).localeCompare(a.date+(a.time||'')));
+      const top=f=>{ const c={}; st.abc.forEach(x=>{ const k=(f(x)||'').split(',')[0].trim(); if(k && k!=='기타') c[k]=(c[k]||0)+1; }); return Object.entries(c).sort((a,b)=>b[1]-a[1]).slice(0,3); };
+      const tA=top(x=>x.A), tC=top(x=>x.C);
+      document.getElementById('abcSummary').innerHTML = st.abc.length
+        ? `<div class="chips" style="margin-bottom:10px">${tA.length?`<span style="font-size:12.5px;color:#555;font-weight:700;">자주 나온 선행사건(A)</span>`+tA.map(([k,n])=>`<span class="tag info">${esc(k)} ${n}회</span>`).join(''):''} ${tC.length?`<span style="font-size:12.5px;color:#555;font-weight:700;">자주 나온 결과(C)</span>`+tC.map(([k,n])=>`<span class="tag purple">${esc(k)} ${n}회</span>`).join(''):''}</div>`
+        : '<div class="dash-empty">아직 ABC 기록이 없습니다.</div>';
+      const tb=document.querySelector('#abcTable tbody');
+      tb.innerHTML = l.length ? l.map(x=>{ const b=(st.behaviors||[]).find(y=>y.id===x.bid); const nm = x.bOther || (b ? b.name : '기타');
+        return `<tr><td>${esc(x.date)}</td><td>${esc(x.time||'')}</td><td style="text-align:left"><b>${esc(nm)}</b>${x.B?`<br><span style="font-size:12px;color:#888">${esc(x.B)}</span>`:''}</td><td style="text-align:left">${esc(x.A||'-')}</td><td style="text-align:left">${esc(x.C||'-')}</td><td>${esc(x.inten||'-')}</td><td style="text-align:left;font-size:12px">${esc(x.note||'')}</td><td><span onclick="delAbc('${x.id}')" style="color:red;cursor:pointer" title="삭제">✕</span></td></tr>`; }).join('')
+        : '<tr class="empty-row"><td colspan="8">아직 기록이 없습니다. 「＋ ABC 기록」을 눌러 남겨 보세요.</td></tr>';
+    }
+    function openAbcModal(){
+      const st=getStudent(curStudent); st.abc=st.abc||[];
+      const t=new Date(); const hh=String(t.getHours()).padStart(2,'0')+':'+String(t.getMinutes()).padStart(2,'0');
+      openModal(`<h3>＋ ABC 기록</h3>
+        <p class="hint">* 선행사건(A) → 행동(B) → 결과(C) 순서로 남기면, 어떤 상황이 행동을 일으키고 무엇이 행동을 유지시키는지 패턴을 찾을 수 있습니다. 회색 문장 버튼을 누르면 입력창이 채워집니다.</p>
+        <div class="ov-grid">
+          <div><label>날짜</label><input type="date" id="abDate" value="${todayStr()}"></div>
+          <div><label>시각</label><input type="time" id="abTime" value="${hh}"></div>
+          <div><label>표적행동</label><select id="abBid"><option value="">기타(직접 입력)</option>${(st.behaviors||[]).map(b=>`<option value="${b.id}">${esc(b.name)}</option>`).join('')}</select></div>
+          <div><label>강도 (선택)</label><select id="abInten"><option value="">-</option><option>1 (약)</option><option>2 (중)</option><option>3 (강)</option></select></div>
+        </div>
+        <div class="mo-row" style="margin-top:12px"><label>B — 행동 (아이가 무엇을 했는지)</label><input id="abB" placeholder="예: 책상을 밀고 자리를 이탈"></div>
+        <div class="mo-row"><label>A — 선행사건 (행동 직전에 무슨 일이 있었는지)</label><div class="chips" style="margin-bottom:6px">${ABC_A.map(x=>`<button type="button" class="chip-btn" onclick="document.getElementById('abA').value=this.textContent.trim()">${x}</button>`).join('')}</div><input id="abA"></div>
+        <div class="mo-row"><label>C — 결과 (행동 직후에 어떻게 대응했는지)</label><div class="chips" style="margin-bottom:6px">${ABC_C.map(x=>`<button type="button" class="chip-btn" onclick="document.getElementById('abC').value=this.textContent.trim()">${x}</button>`).join('')}</div><input id="abC"></div>
+        <div class="mo-row"><label>메모</label><input id="abNote"></div>
+        <div class="mo-foot"><button class="btn-gray" onclick="closeModal()">취소</button><button class="btn-primary" onclick="saveAbc()">저장</button></div>`);
+    }
+    function saveAbc(){
+      const st=getStudent(curStudent); st.abc=st.abc||[];
+      const g=id=>(document.getElementById(id).value||'').trim();
+      const o={ id:'abc'+Date.now(), date:g('abDate'), time:g('abTime'), bid:g('abBid'), B:g('abB'), A:g('abA'), C:g('abC'), inten:g('abInten'), note:g('abNote') };
+      if(!o.date) return toast('날짜를 입력하세요', true);
+      if(!o.B && !o.bid) return toast('B — 행동을 적어 주세요', true);
+      if(!o.A || !o.C) return toast('A(선행사건)와 C(결과)를 남겨 주세요', true);
+      st.abc.push(o); saveStudent(curStudent); closeModal(); renderAbc(); toast('ABC 기록을 저장했습니다');
+    }
+    function delAbc(id){ if(!confirm('이 ABC 기록을 지울까요?')) return; const st=getStudent(curStudent); st.abc=(st.abc||[]).filter(x=>x.id!==id); saveStudent(curStudent); renderAbc(); }
 
     // ==================== 5. 발달 ====================
     function saveDev(){
@@ -1593,7 +1914,7 @@
             if(!dates.length) return;
             const aVals=dates.filter(d=>b.records[d].phase==='A').map(d=>b.records[d].count);
             const bVals=dates.filter(d=>b.records[d].phase==='B').map(d=>b.records[d].count);
-            out.push({ name:b.name, phase:b.phase, aN:aVals.length, bN:bVals.length, aMean:aVals.length?mean(aVals):null, bMean:bVals.length?mean(bVals):null, chg:(aVals.length&&bVals.length)?pctChange(mean(aVals),mean(bVals)):null });
+            out.push({ name:b.name, 방식:bhMethodKo(b), 단위:bhUnit(b), phase:b.phase, aN:aVals.length, bN:bVals.length, aMean:aVals.length?mean(aVals):null, bMean:bVals.length?mean(bVals):null, chg:(aVals.length&&bVals.length)?pctChange(mean(aVals),mean(bVals)):null });
         });
         return out;
     }
@@ -1609,14 +1930,20 @@
     }
     function buildAiPrompt(sid, days){
         const st=getStudent(sid);
-        const nm = VIEW_REAL ? getStudentName(sid, true) : st.maskName;
+        const nm = st.maskName || '내담자'; // [V16] AI에는 항상 마스킹 이름만 전송
+        const pf = prof(sid);
+        const goalsAi = goalSummaryForReport(sid, days).filter(x=>x.g.status!=='보류').map(x=>({서비스:svcName(x.g.service), 목표:`${x.g.cond||''} ${x.g.beh||''} — ${x.g.crit||''}`, 시작:x.g.baseline, 목표값:x.g.target, 단위:x.g.unit, 최근:x.last?x.last.v:null, 측정횟수:x.n, 진행률:x.pct, 상태:x.g.status||'진행', 진전도경고:x.warn}));
+        const nfAi = nfSummary(sid, days);
         const att = collectAttStats(sid, days).map(g=>({활동:g.sub, 영역:g.cat, 회기수:g.n, '전반평균시간초':Math.round(g.t1), '후반평균시간초':Math.round(g.t2), '전반평균오류':+g.e1.toFixed(1), '후반평균오류':+g.e2.toFixed(1)}));
         const bh = collectBehaviorStats(sid, days);
         const wisc = st.wisc||{};
         const dev = st.dev||{};
         const counsel = collectCounselSummary(sid, days).slice(0,10).map(c=>({날짜:c.date, 유형:c.type, 내용:c.content}));
-        return `당신은 발달심리·학습심리 전문가입니다. 아래는 학습센터의 한 아동 기록입니다. 데이터에 근거해서만 서술하고, 없는 수치를 만들지 마세요.
-[아동] ${nm} / 기간: ${days==='all'?'전체':'최근 '+days+'일'} / 출석률: ${JSON.stringify(collectAttendance(sid,days))}
+        return `당신은 발달·심리치료 전문가입니다. 아래는 발달·심리센터 한 내담자의 기록입니다. 데이터에 근거해서만 서술하고, 없는 수치를 만들지 마세요. 기록이 없는 영역은 언급하지 마세요.
+[내담자] ${nm} / 연령군: ${ageGroupOf(pf)||'미입력'} / 이용 서비스: ${pf.services.map(svcName).join(', ')||'미입력'}
+[치료 목표] ${JSON.stringify(goalsAi)}
+[뉴로피드백] ${nfAi?JSON.stringify({회기:nfAi.n, 총분:nfAi.min, 초기보상률:nfAi.r1, 최근보상률:nfAi.r2, 초기TBR:nfAi.t1, 최근TBR:nfAi.t2, 프로토콜:nfAi.protos}):'없음'}
+[기간] ${nm} / 기간: ${days==='all'?'전체':'최근 '+days+'일'} / 출석률: ${JSON.stringify(collectAttendance(sid,days))}
 [주의력 훈련 통계] ${JSON.stringify(att)}
 [행동중재] ${JSON.stringify(bh)}
 [WISC 지수] ${JSON.stringify(wisc.scores||[])} (순서: FSIQ,언어,시공간,유동,작업,처리) 소견: ${wisc.comment||'없음'}
@@ -1624,7 +1951,7 @@
 [상담·수업일지 발췌] ${JSON.stringify(counsel)}
 
 다음 형식으로 한국어로 작성하세요(마크다운 금지, 일반 텍스트):
-[종합 소견] 4~6문장. 시간 단축/오류 변화의 의미, 영역 간 강점·약점, 행동중재 변화를 연결해서 해석.
+[종합 소견] 4~6문장. 치료 목표 진행, 훈련·행동 변화의 의미, 영역 간 강점·약점을 연결해서 해석.
 [강점] 2개.
 [유의·우려] 2개.
 [다음 단계 제안] 3개.
@@ -1647,15 +1974,22 @@
         const att = collectAttStats(sid, days);
         const attendance = collectAttendance(sid, days);
         const bh = collectBehaviorStats(sid, days);
-        const counsel = collectCounselSummary(sid, days);
+        const counsel = collectCounselSummary(sid, days).filter(c=>!opts.forParent || c.shared); // [V16] 학부모용은 공유 일지만
         const attBlocks = buildAttentionAnalysis(sid, days);
+        const gsum = goalSummaryForReport(sid, days).filter(x=>!opts.forParent || (x.g.shared!==false && x.g.status!=='보류'));
+        const nfs = nfSummary(sid, days);
+        const pss = opts.forParent ? null : psySummary(sid, days);
+        const f1 = v => (v===null||v===undefined)?'-':(Math.round(v*10)/10);
+        const goalHtml = gsum.length ? gsum.map(x=>`<p>· <span class="svc-chip" style="background:${svcColor(x.g.service)}">${esc(svcName(x.g.service))}</span> <b>${esc(x.g.cond||'')} ${esc(x.g.beh||'')}</b> — ${esc(x.g.crit||'')}<br><span style="font-size:13px;color:#666;">시작 ${esc(dv(x.g.baseline))} → 최근 ${x.last?esc(x.last.v):'-'} / 목표 ${esc(dv(x.g.target))} ${esc(x.g.unit||'')}${x.pct!==null?` · 진행 <b>${x.pct}%</b>`:''} · ${esc(x.g.status||'진행')}${(!opts.forParent&&x.warn)?' · <b style="color:#e67e22;">진전도 경고</b>':''}</span></p>`).join('') : '';
+        const nfHtml = nfs ? `<p>· 기간 내 ${nfs.n}회기 (총 ${nfs.min}분) · 프로토콜: ${esc(nfs.protos.join(', '))}</p><p>· 보상률 초기 ${f1(nfs.r1)}% → 최근 ${f1(nfs.r2)}% · TBR(종료값) 초기 ${f1(nfs.t1)} → 최근 ${f1(nfs.t2)}</p>` : '';
+        const psHtml = pss ? `<p>· 기간 내 ${pss.n}회기 · 회기 종료 SUDS ${f1(pss.firstPost)} → ${f1(pss.lastPost)} · 회기 중 평균 감소 ${f1(pss.avgDrop)}점${pss.tech.length?' · 주요 기법: '+esc(pss.tech.join(', ')):''}</p><p class="hint">* 내부용 요약입니다. 학부모용 인쇄·포털에는 표시되지 않습니다.</p>` : '';
         const totalSessions = att.reduce((a,g)=>a+g.n,0);
         const attStatsHtml = `<div class="stat-grid">
             <div class="stat-item"><div class="si-v">${totalSessions}</div><div class="si-l">훈련 회기</div></div>
             <div class="stat-item"><div class="si-v">${attendance.rate===null?'-':attendance.rate+'%'}</div><div class="si-l">출석률</div><div class="si-note">출석 ${attendance.present} · 보강 ${attendance.makeup} · 결석 ${attendance.absent}</div></div>
             ${att.map(g=>`<div class="stat-item"><div class="si-v">${Math.round(g.meanTime)}초</div><div class="si-l">${esc(g.sub)} 평균시간</div><div class="si-note">평균 오류 ${g.meanErr.toFixed(1)}개 · ${g.n}회</div></div>`).join('')}
         </div>`;
-        const bhHtml = bh.length ? bh.map(b=>`<p>· <b>${esc(b.name)}</b>: 기초선 ${b.aN||0}회기 평균 ${b.aMean===null?'-':b.aMean.toFixed(1)}회 → 중재 ${b.bN||0}회기 평균 ${b.bMean===null?'-':b.bMean.toFixed(1)}회 ${b.chg===null?'':`(중재 후 <b>${b.chg>0?'+':''}${b.chg}%</b> ${b.chg<0?'감소':b.chg>0?'증가':'유지'})`} — 현재 ${b.phase==='A'?'기초선':'중재'} 단계</p>`).join('') : '<p>기간 내 행동중재 기록이 없습니다.</p>';
+        const bhHtml = bh.length ? bh.map(b=>`<p>· <b>${esc(b.name)}</b>: 기초선 ${b.aN||0}회기 평균 ${b.aMean===null?'-':b.aMean.toFixed(1)}${b.단위||'회'} → 중재 ${b.bN||0}회기 평균 ${b.bMean===null?'-':b.bMean.toFixed(1)}${b.단위||'회'} ${b.chg===null?'':`(중재 후 <b>${b.chg>0?'+':''}${b.chg}%</b> ${b.chg<0?'감소':b.chg>0?'증가':'유지'})`} — 현재 ${b.phase==='A'?'기초선':'중재'} 단계</p>`).join('') : '<p>기간 내 행동중재 기록이 없습니다.</p>';
         const cnCounts = {}; counsel.forEach(c=>cnCounts[c.type]=(cnCounts[c.type]||0)+1);
         const cnHtml = counsel.length ? `<p>기간 내 일지 ${counsel.length}건 (${Object.entries(cnCounts).map(([k,v])=>`${k} ${v}건`).join(', ')})</p><ul>${counsel.slice(0,6).map(c=>`<li>${esc(c.date)} [${esc(c.type)}] ${esc(c.content.length>70?c.content.slice(0,70)+'…':c.content)}</li>`).join('')}</ul>` : '<p>기간 내 상담·수업 일지가 없습니다.</p>';
         const ai = st.aiReport;
@@ -1664,19 +1998,19 @@
         <div class="report">
             <div class="rp-head">
                 <div class="rp-org">${ORG_NAME}</div>
-                <div class="rp-title">학생 통합 리포트</div>
+                <div class="rp-title">통합 리포트</div>
                 <div class="rp-meta">${esc(nm)} · 기간: ${days==='all'?'전체':'최근 '+days+'일'} · 생성일 ${todayStr()}${opts.forParent?'':(VIEW_REAL?'':' (실명 마스킹)')}</div>
             </div>
-            <h3>1. 훈련 참여 요약</h3>
-            ${attStatsHtml}
-            <h3>2. 주의력 훈련 분석 <span class="ai-tag" style="font-size:11px;">자동 분석</span></h3>
-            ${attBlocks || '<p>기간 내 훈련 데이터가 없습니다.</p>'}
-            <h3>3. 행동중재 현황</h3>
-            ${bhHtml}
-            <h3>4. 상담 · 수업 일지</h3>
-            ${cnHtml}
-            <h3>5. AI 종합 소견</h3>
-            ${aiHtml}
+            ${[
+              ['참여 요약', attStatsHtml],
+              gsum.length ? ['치료 목표 진행', goalHtml] : null,
+              attBlocks ? ['주의력 훈련 분석 <span class="ai-tag" style="font-size:11px;">자동 분석</span>', attBlocks] : null,
+              nfs ? ['뉴로피드백', nfHtml] : null,
+              bh.length ? ['행동중재 현황', bhHtml] : null,
+              pss ? ['심리치료·상담 (내부용)', psHtml] : null,
+              ['상담 · 회기 일지', cnHtml],
+              ['AI 종합 소견', aiHtml]
+            ].filter(Boolean).map((s,i)=>`<h3>${i+1}. ${s[0]}</h3>${s[1]}`).join('')}
             <div class="rp-dis">본 리포트는 기록 데이터 기반 자동 분석 결과이며, 전문가의 임상적 판단을 대체하지 않습니다. 검사 결과 해석은 전문가와 함께 확인하시기 바랍니다.</div>
         </div>`;
     }
@@ -1711,6 +2045,565 @@
 
     // ==================== 설정 (관리자) ====================
     let settingsTab = null;
+
+    // ==================== V16: 센터 설정 (서비스 · 치료사) ====================
+    const DEFAULT_SERVICES = [
+      {id:'play', name:'놀이치료', short:'놀이', color:'#f39c12'},
+      {id:'cog',  name:'인지치료', short:'인지', color:'#3498db'},
+      {id:'si',   name:'감각통합', short:'감각', color:'#27ae60'},
+      {id:'nf',   name:'뉴로피드백', short:'뉴로', color:'#8e44ad'},
+      {id:'aba',  name:'행동수정(ABA)', short:'ABA', color:'#c0392b'},
+      {id:'psy',  name:'심리치료', short:'심리', color:'#16a085'},
+      {id:'cns',  name:'심리상담', short:'상담', color:'#d35400'}
+    ];
+    let dataReady = false;
+    let calTher = '';
+    function defaultCenter(){ return { services: JSON.parse(JSON.stringify(DEFAULT_SERVICES)), therapists: [], warnRun: 3 }; }
+    function center(){ if(!db.center) db.center = defaultCenter(); db.center.services = db.center.services||[]; db.center.therapists = db.center.therapists||[]; return db.center; }
+    function saveCenter(){ return DB.set('center', db.center); }
+    function svc(id){ return center().services.find(s=>s.id===id) || null; }
+    function svcName(id){ const s=svc(id); return s ? s.name : (id ? id : '미지정'); }
+    function svcShort(id){ const s=svc(id); return s ? (s.short || s.name.slice(0,2)) : ''; }
+    function svcColor(id){ const s=svc(id); return s ? s.color : '#95a5a6'; }
+    function thName(id){ const t=center().therapists.find(x=>x.id===id); return t ? t.name : ''; }
+    function svcOptions(sel, withEmpty=true, emptyLabel='— 서비스 선택 —'){ return (withEmpty?`<option value="">${emptyLabel}</option>`:'') + center().services.map(s=>`<option value="${s.id}" ${s.id===sel?'selected':''}>${esc(s.name)}</option>`).join(''); }
+    function thOptions(sel, withEmpty=true, emptyLabel='— 담당 치료사 —'){ return (withEmpty?`<option value="">${emptyLabel}</option>`:'') + center().therapists.map(t=>`<option value="${t.id}" ${t.id===sel?'selected':''}>${esc(t.name)}</option>`).join(''); }
+    function syncTherapistsFromUsers(){
+      if(IS_DEMO || !dataReady || !me || !me.profile || me.profile.role!=='admin') return;
+      const c = center(); let changed = false;
+      Object.entries(usersMap||{}).forEach(([uid,u])=>{
+        if(!u || !u.approved || u.role==='parent') return;
+        const ex = c.therapists.find(t=>t.id===uid);
+        if(!ex){ c.therapists.push({id:uid, name:u.name||u.email||'치료사'}); changed = true; }
+        else if(u.name && ex.name!==u.name && !ex.custom){ ex.name = u.name; changed = true; }
+      });
+      if(changed) saveCenter();
+    }
+
+    // ==================== V16: 내담자 프로필 · 연령군 ====================
+    function prof(sid){ const s=getStudent(sid); if(!s) return {services:[]}; s.profile = s.profile||{services:[]}; s.profile.services = s.profile.services||[]; return s.profile; }
+    function ageOf(birth){ if(!birth) return null; const b=new Date(birth), t=new Date(); if(isNaN(b)) return null; let a=t.getFullYear()-b.getFullYear(); const m=t.getMonth()-b.getMonth(); if(m<0||(m===0&&t.getDate()<b.getDate())) a--; return a; }
+    function ageGroupOf(p){ if(p && p.ageGroup && p.ageGroup!=='auto') return p.ageGroup; const a=ageOf(p&&p.birth); if(a===null) return ''; return a<7?'유아':a<13?'아동':a<19?'청소년':'성인'; }
+    function studentMeta(sid){
+      const p = prof(sid); const ag = ageGroupOf(p);
+      const dots = p.services.map(id=>`<span class="svc-dot" style="background:${svcColor(id)}" title="${esc(svcName(id))}"></span>`).join('');
+      return (ag?` <small style="opacity:.65;font-size:11px;">${ag}</small>`:'') + (dots?` <span style="display:inline-flex;gap:3px;margin-left:4px;vertical-align:middle;">${dots}</span>`:'');
+    }
+    function subLineOf(sid){ const p=prof(sid); const ag=ageGroupOf(p); const a=ageOf(p.birth); return `${ag||'연령 미입력'}${a!==null?' (만 '+a+'세)':''} · ${p.services.map(svcName).join(' · ')||'서비스 미지정'}${p.therapist?' · 담당 '+thName(p.therapist):''}`; }
+    function applyTabVisibility(){
+      const p = curStudent ? prof(curStudent) : {services:[]};
+      const st = curStudent ? (getStudent(curStudent)||{}) : {};
+      const none = !p.services.length; const has = k => ((st[k]||[]).length>0);
+      const show = {
+        tabNf: none || p.services.includes('nf') || has('nf'),
+        tabPsy: none || p.services.includes('psy') || p.services.includes('cns') || has('psy'),
+        tabAtt: none || p.services.some(x=>['cog','nf','aba'].includes(x)) || has('attention'),
+        tabBeh: none || p.services.some(x=>['aba','play','cog','si'].includes(x)) || has('behaviors')
+      };
+      Object.entries(show).forEach(([id,v])=>{ const el=document.getElementById(id); if(el) el.style.display = v?'':'none'; });
+    }
+    function openStudentTab(sid, tab){
+      selectStudent(sid, false);
+      const btn=[...document.querySelectorAll('.tab-btn')].find(b=>(b.getAttribute('onclick')||'').includes("'"+tab+"'"));
+      if(btn){ btn.style.display=''; btn.click(); }
+    }
+    function dayDiff(a,b){ return Math.round((new Date(b)-new Date(a))/86400000); }
+    function addDays(s,n){ const d=new Date(s); d.setDate(d.getDate()+n); return d.toISOString().slice(0,10); }
+    function ddayTxt(d){ const n=dayDiff(todayStr(), d); return n>0?`D-${n}`:n===0?'D-day':`기한 ${-n}일 지남`; }
+    function emptyV(x){ return x===undefined || x===null || x==='' || (typeof x==='number' && isNaN(x)); }
+    function dv(x){ return emptyV(x)?'-':x; }
+
+    // ==================== V16: 개요 탭 ====================
+    function renderOverview(){
+      const wrap=document.getElementById('overviewWrap'); const st=getStudent(curStudent); if(!st||!wrap) return;
+      const p=prof(curStudent); const a=ageOf(p.birth); const ag=ageGroupOf(p);
+      const goals=st.goals||[]; const active=goals.filter(g=>!g.status||g.status==='진행'||g.status==='수정 필요');
+      const warns=active.filter(g=>progressWarning(g)); const done=goals.filter(g=>g.status==='달성');
+      const today=todayStr();
+      const next=db.schedule.filter(s=>s.sid===curStudent && s.date>=today && s.status==='plan').sort((x,y)=>(x.date+(x.time||'')).localeCompare(y.date+(y.time||'')))[0];
+      const att=collectAttendance(curStudent,30);
+      const lastPsy=(st.psy||[]).slice().sort((x,y)=>(y.date||'').localeCompare(x.date||''))[0];
+      const riskOn = lastPsy && (lastPsy.risk==='중간'||lastPsy.risk==='높음');
+      wrap.innerHTML = `
+      <div class="stat-grid" style="margin-top:0;margin-bottom:20px">
+        <div class="stat-item"><div class="si-v">${ag||'-'}</div><div class="si-l">연령군</div><div class="si-note">${a!==null?'만 '+a+'세':'생년월일 미입력'}</div></div>
+        <div class="stat-item"><div class="si-v">${active.length}</div><div class="si-l">진행 중 목표</div><div class="si-note">달성 ${done.length}개</div></div>
+        <div class="stat-item" ${warns.length?'style="background:#fdedec;border-color:#f5b7b1"':''}><div class="si-v" ${warns.length?'style="color:#c0392b"':''}>${warns.length}</div><div class="si-l">진전도 경고</div></div>
+        <div class="stat-item"><div class="si-v">${att.rate===null?'-':att.rate+'%'}</div><div class="si-l">최근 30일 출석률</div><div class="si-note">${att.total}회 중 출석 ${att.present} · 보강 ${att.makeup}</div></div>
+        <div class="stat-item"><div class="si-v" style="font-size:17px">${next?koDate(next.date)+' '+esc(next.time||''):'-'}</div><div class="si-l">다음 예정 수업</div><div class="si-note">${next?esc(svcName(next.service))+(next.therapist?' · '+esc(thName(next.therapist)):''):''}</div></div>
+      </div>
+      ${warns.length?`<div class="banner warn"><div><b>⚠️ 진전도 경고 ${warns.length}건</b>${warns.map(g=>esc(g.beh||'목표')).join(' · ')} — 최근 측정값이 연속으로 목표선 아래입니다. 중재 방법·난이도 조정을 검토하세요.</div><button class="btn-orange btn-sm bn-btn" onclick="openStudentTab(curStudent,'goals')">목표 보기</button></div>`:''}
+      ${riskOn?`<div class="banner confid"><div><b>🚨 위기 위험 「${esc(lastPsy.risk)}」 (${esc(lastPsy.date)} 회기)</b>${esc(lastPsy.riskNote||'조치 내용을 기록해 주세요.')}</div><button class="btn-purple btn-sm bn-btn" onclick="openStudentTab(curStudent,'psy')">기록 보기</button></div>`:''}
+      <div class="card"><div class="card-title">🗂 내담자 기본 정보</div>
+        <div class="ov-grid">
+          <div><label>생년월일</label><input type="date" id="ovBirth" value="${esc(p.birth||'')}"></div>
+          <div><label>연령군</label><select id="ovAge"><option value="auto">자동 (생년월일 기준)</option>${['유아','아동','청소년','성인'].map(x=>`<option ${p.ageGroup===x?'selected':''}>${x}</option>`).join('')}</select></div>
+          <div><label>주 담당 치료사</label><select id="ovTher">${thOptions(p.therapist)}</select></div>
+          <div><label>치료 시작일</label><input type="date" id="ovStart" value="${esc(p.startDate||'')}"></div>
+        </div>
+        <div style="margin-top:14px"><div class="lb-s">이용 서비스 (눌러서 선택)</div><div class="chips" id="ovSvcs">${center().services.map(s=>`<button type="button" class="chip-btn ${p.services.includes(s.id)?'on':''}" data-id="${s.id}" onclick="this.classList.toggle('on')"><span class="svc-dot" style="background:${s.color}"></span> ${esc(s.name)}</button>`).join('')}</div></div>
+        <div class="ov-grid" style="margin-top:14px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))">
+          <div><label>주 호소 (보호자·내담자가 바라는 변화)</label><textarea id="ovComplaint" style="min-height:80px">${esc(p.complaint||'')}</textarea></div>
+          <div><label>진단·의뢰 사유 / 타 기관 이력</label><textarea id="ovDx" style="min-height:80px">${esc(p.dx||'')}</textarea></div>
+        </div>
+        <div style="text-align:right;margin-top:12px"><button class="btn-primary" onclick="saveOverview()">저장</button></div>
+        <p class="hint">* 이용 서비스를 고르면 그 아이에게 필요한 탭만 보이도록 화면이 정리됩니다(예: 뉴로피드백을 안 하면 뉴로피드백 탭 숨김). 아무것도 고르지 않으면 모든 탭이 보입니다.</p>
+      </div>`;
+    }
+    function saveOverview(){
+      const p=prof(curStudent);
+      p.birth=document.getElementById('ovBirth').value; p.ageGroup=document.getElementById('ovAge').value;
+      p.therapist=document.getElementById('ovTher').value; p.startDate=document.getElementById('ovStart').value;
+      p.services=[...document.querySelectorAll('#ovSvcs .chip-btn.on')].map(b=>b.dataset.id);
+      p.complaint=document.getElementById('ovComplaint').value; p.dx=document.getElementById('ovDx').value;
+      applyTabVisibility(); document.getElementById('headerSub').innerText = subLineOf(curStudent);
+      saveStudent(curStudent); toast('기본 정보를 저장했습니다');
+    }
+
+    // ==================== V16: 치료 목표 · 목표선 · 진전도 경고 ====================
+    const UNITS=['정반응률(%)','횟수','시간(초)','시간(분)','척도 점수','점수','촉구 단계(1~5)'];
+    const GOAL_PRESETS = {
+      play:{domain:'정서·사회성', cond:'치료사가 차례 주고받기 놀이를 제안하면', beh:'놀잇감을 주고받으며 놀이에 참여한다', crit:'5분 이상, 3회기 연속', unit:'시간(분)', dir:'up'},
+      cog:{domain:'주의·실행기능', cond:'3단계 구두 지시를 들려주면', beh:'순서대로 수행한다', crit:'10회 중 8회 이상(80%), 3회기 연속', unit:'정반응률(%)', dir:'up'},
+      si:{domain:'감각조절·운동계획', cond:'그네(플랫폼) 활동 중', beh:'도움 없이 균형 자세를 유지한다', crit:'30초 이상, 3회기 연속', unit:'시간(초)', dir:'up'},
+      nf:{domain:'각성·주의 조절', cond:'SMR 훈련 20분 회기에서', beh:'보상 구간을 유지한다', crit:'보상률 70% 이상, 3회기 연속', unit:'점수', dir:'up'},
+      aba:{domain:'의사소통·대체행동', cond:'원하는 물건이 있을 때 그림카드 3장이 제시되면', beh:'원하는 카드를 골라 치료사에게 건넨다', crit:'10회 기회 중 8회 이상(80%), 3회기 연속', unit:'정반응률(%)', dir:'up'},
+      psy:{domain:'정서 조절', cond:'불안한 상황을 떠올렸을 때', beh:'배운 이완 기법을 스스로 사용하고 고통 점수를 보고한다', crit:'SUDS 10점 중 4점 이하, 3회기 연속', unit:'척도 점수', dir:'down'},
+      cns:{domain:'적응·대인관계', cond:'한 주 동안 갈등 상황이 생기면', beh:'상담에서 연습한 대화 방법을 사용한다', crit:'주 3회 이상 사용 보고, 3주 연속', unit:'횟수', dir:'up'}
+    };
+    function hasAim(g){ return !!(g && g.startDate && g.targetDate && !emptyV(g.baseline) && !emptyV(g.target)); }
+    function aimAt(g, d){ const span=Math.max(1, dayDiff(g.startDate, g.targetDate)); const x=Math.min(1, Math.max(0, dayDiff(g.startDate, d)/span)); return Number(g.baseline)+(Number(g.target)-Number(g.baseline))*x; }
+    function aimTxt(g, d){ return hasAim(g) ? (Math.round(aimAt(g,d)*10)/10) : '-'; }
+    function sortedPts(g){ return (g.points||[]).filter(p=>p && p.d).slice().sort((a,b)=>a.d<b.d?-1:a.d>b.d?1:0); }
+    function progressWarning(g, n){
+      n = n || Number(center().warnRun) || 3;
+      if(!hasAim(g)) return null;
+      const pts = sortedPts(g); if(pts.length < n) return null;
+      const last = pts.slice(-n);
+      const bad = p => g.dir==='down' ? Number(p.v) > aimAt(g,p.d) : Number(p.v) < aimAt(g,p.d);
+      return last.every(bad) ? { n, idx: last.map((_,i)=>pts.length-n+i) } : null;
+    }
+    function goalReachedRun(g){
+      if(emptyV(g.target)) return 0; const n=3; const pts=sortedPts(g); if(pts.length<n) return 0;
+      const ok = p => g.dir==='down' ? Number(p.v) <= Number(g.target) : Number(p.v) >= Number(g.target);
+      return pts.slice(-n).every(ok) ? n : 0;
+    }
+    function goalPct(g){
+      const pts=sortedPts(g); const last=pts[pts.length-1];
+      if(!last || emptyV(g.baseline) || emptyV(g.target) || Number(g.target)===Number(g.baseline)) return null;
+      const pct = (Number(last.v)-Number(g.baseline))/(Number(g.target)-Number(g.baseline))*100;
+      return Math.max(0, Math.min(100, Math.round(pct)));
+    }
+    function goalMissing(g){ const m=[]; if(!g.cond) m.push('조건'); if(!g.beh) m.push('행동'); if(!g.crit) m.push('기준'); else if(!/\d/.test(g.crit)) m.push('기준의 수치'); return m; }
+    function renderGoals(){
+      const st=getStudent(curStudent); if(!st) return; st.goals=st.goals||[];
+      document.getElementById('warnRunTxt').innerText = center().warnRun||3;
+      const fSel=document.getElementById('goalFilter'); const fv=fSel.value;
+      const used=[...new Set(st.goals.map(g=>g.service).filter(Boolean))];
+      fSel.innerHTML='<option value="">전체 서비스</option>'+used.map(id=>`<option value="${id}" ${id===fv?'selected':''}>${esc(svcName(id))}</option>`).join('');
+      Object.keys(charts).filter(k=>k.startsWith('goal_')).forEach(k=>{ try{ charts[k].destroy(); }catch(e){} delete charts[k]; });
+      const list=document.getElementById('goalList');
+      const order={'진행':0,'수정 필요':1,'보류':2,'달성':3};
+      const gs=st.goals.filter(g=>!fSel.value||g.service===fSel.value).sort((a,b)=>(order[a.status||'진행']||0)-(order[b.status||'진행']||0));
+      if(!gs.length){ list.innerHTML='<div class="card" style="text-align:center;color:#999;padding:40px">아직 목표가 없습니다. 「＋ 새 목표」를 눌러 첫 목표를 만들어 보세요.<br><span style="font-size:12px">서비스를 고른 뒤 「💡 예시 문장 채우기」를 누르면 문장 틀이 채워집니다.</span></div>'; return; }
+      list.innerHTML = gs.map(goalCardHtml).join('');
+      gs.forEach(drawGoalChart);
+    }
+    function goalCardHtml(g){
+      const w=progressWarning(g); const miss=goalMissing(g); const pts=sortedPts(g); const last=pts[pts.length-1];
+      const reach=goalReachedRun(g); const live = g.status!=='달성' && g.status!=='보류';
+      const stTag={'진행':'info','달성':'ok','보류':'gray','수정 필요':'warn'}[g.status||'진행']||'info';
+      return `<div class="goal-card ${w&&live?'warn':''}">
+        <div class="goal-head"><span class="svc-chip" style="background:${svcColor(g.service)}">${esc(svcName(g.service))}</span>${g.domain?`<span class="tag gray">${esc(g.domain)}</span>`:''}<span class="tag ${stTag}">${esc(g.status||'진행')}</span>${w&&live?`<span class="tag warn">⚠️ 진전도 경고 · 연속 ${w.n}회 목표선 아래</span>`:''}${g.shared===false?'<span class="tag gray">🔒 학부모 미공유</span>':'<span class="tag ok">🔗 학부모 공유</span>'}
+          <span style="margin-left:auto;display:flex;gap:6px" class="no-print"><button class="btn-gray btn-sm" onclick="openGoalModal('${g.id}')">수정</button><button class="btn-red btn-sm" onclick="delGoal('${g.id}')">삭제</button></span></div>
+        <div class="goal-text"><span class="g-c">${esc(g.cond||'(조건)')}</span> <span class="g-b">${esc(g.beh||'(행동)')}</span> <span class="g-k">— ${esc(g.crit||'(기준)')}</span></div>
+        <div class="${miss.length?'chk-bad':'chk-ok'}">${miss.length?'✗ 측정 가능한 목표가 되려면 빠진 요소: '+miss.join(', '):'✓ 조건 · 행동 · 기준이 모두 들어 있습니다'}</div>
+        <div style="font-size:12.5px;color:#7f8c8d;margin-top:4px">${esc(g.unit||'')} · 시작 ${esc(dv(g.baseline))} → 목표 ${esc(dv(g.target))} (${g.dir==='down'?'낮을수록 좋음':'높을수록 좋음'}) · ${esc(g.startDate||'-')} ~ ${esc(g.targetDate||'-')}${g.targetDate&&live?' · <b>'+ddayTxt(g.targetDate)+'</b>':''}${last?` · 최근 <b style="color:var(--brand)">${esc(last.v)}</b> (${koDate(last.d)})`:''}</div>
+        ${reach && live ? `<div class="banner info" style="margin:10px 0 0"><div><b>🎉 기준 도달</b>최근 ${reach}회 연속 목표 수준에 도달했습니다. 상태를 '달성'으로 바꿀까요?</div><button class="btn-green btn-sm bn-btn" onclick="setGoalStatus('${g.id}','달성')">달성 처리</button></div>`:''}
+        ${w && live && g.status!=='수정 필요' ? `<div class="banner warn" style="margin:10px 0 0"><div><b>검토 제안</b>① 촉구 수준·강화물 점검 ② 과제를 더 작은 단계로 나누기 ③ 회기 빈도·가정 연계 확인 ④ 목표 기간 재설정</div><button class="btn-orange btn-sm bn-btn" onclick="setGoalStatus('${g.id}','수정 필요')">'수정 필요' 표시</button></div>`:''}
+        <div style="height:220px;margin-top:12px"><canvas id="gc_${g.id}"></canvas></div>
+        <div class="input-row no-print" style="margin-top:10px;background:#f8f9fa;padding:10px;border-radius:8px">
+          <b style="font-size:13px;color:#555">측정값 추가</b>
+          <input type="date" id="gpD_${g.id}" value="${todayStr()}">
+          <input type="number" step="any" id="gpV_${g.id}" placeholder="${esc(g.unit||'값')}" style="width:130px" onkeydown="if(event.key==='Enter')addGoalPoint('${g.id}')">
+          <input type="text" id="gpN_${g.id}" placeholder="메모 (예: 언어 촉구 2회)" style="flex:1;min-width:140px">
+          <button class="btn-primary btn-sm" onclick="addGoalPoint('${g.id}')">추가</button>
+        </div>
+        ${pts.length?`<details style="margin-top:8px"><summary style="cursor:pointer;font-size:13px;color:#555">측정 기록 ${pts.length}회 보기</summary><table><thead><tr><th>날짜</th><th>값</th><th>그날 목표선</th><th>메모</th><th></th></tr></thead><tbody>${pts.slice().reverse().map(p=>`<tr><td>${esc(p.d)}</td><td><b>${esc(p.v)}</b></td><td style="color:#999">${aimTxt(g,p.d)}</td><td style="text-align:left;font-size:12px">${esc(p.note||'')}</td><td><span style="color:red;cursor:pointer" onclick="delGoalPoint('${g.id}','${p.id}')">✕</span></td></tr>`).join('')}</tbody></table></details>`:''}
+      </div>`;
+    }
+    function drawGoalChart(g){
+      const cv=document.getElementById('gc_'+g.id); if(!cv) return;
+      const pts=sortedPts(g);
+      const base = g.startDate || (pts[0]&&pts[0].d) || todayStr();
+      const X = d=>dayDiff(base,d);
+      const fmtX = v=>{ const d=new Date(base); d.setDate(d.getDate()+Math.round(v)); return (d.getMonth()+1)+'/'+d.getDate(); };
+      const w = (g.status!=='달성'&&g.status!=='보류') ? progressWarning(g) : null; const ws=new Set(w?w.idx:[]);
+      const col = svcColor(g.service);
+      const ds=[{ label:'측정값', data:pts.map(p=>({x:X(p.d),y:Number(p.v)})), showLine:true, borderColor:col, backgroundColor:col, pointBackgroundColor:pts.map((p,i)=>ws.has(i)?'#e74c3c':col), pointRadius:pts.map((p,i)=>ws.has(i)?7:5), tension:0 }];
+      if(hasAim(g)) ds.push({ label:'목표선', data:[{x:0,y:Number(g.baseline)},{x:X(g.targetDate),y:Number(g.target)}], showLine:true, borderColor:'#7f8c8d', borderDash:[6,5], pointRadius:0, borderWidth:1.5 });
+      if(!emptyV(g.target) && g.targetDate) ds.push({ label:'목표 수준', data:[{x:0,y:Number(g.target)},{x:X(g.targetDate),y:Number(g.target)}], showLine:true, borderColor:'rgba(39,174,96,0.55)', borderDash:[2,4], pointRadius:0, borderWidth:1 });
+      charts['goal_'+g.id] = new Chart(cv, { type:'scatter', data:{datasets:ds},
+        options:{ responsive:true, maintainAspectRatio:false, animation:false,
+          plugins:{ legend:{position:'top', labels:{boxWidth:12}}, tooltip:{callbacks:{label:c=>`${fmtX(c.parsed.x)} · ${c.parsed.y}`}} },
+          scales:{ x:{ ticks:{callback:v=>fmtX(v), maxTicksLimit:8} }, y:{ beginAtZero:true, title:{display:true, text:g.unit||''} } } } });
+    }
+    function openGoalModal(id){
+      const st=getStudent(curStudent); const g = id ? (st.goals||[]).find(x=>x.id===id) : null;
+      const p=prof(curStudent);
+      const d0 = g || { service: p.services[0]||'', status:'진행', dir:'up', unit:'정반응률(%)', startDate: todayStr(), targetDate: addDays(todayStr(),90), shared:true, baseline:'', target:'' };
+      openModal(`<h3>${g?'✎ 목표 수정':'＋ 새 치료 목표'}</h3>
+        <div class="ov-grid">
+          <div><label>서비스</label><select id="gmSvc">${svcOptions(d0.service)}</select></div>
+          <div><label>영역</label><input id="gmDomain" value="${esc(d0.domain||'')}" placeholder="예: 의사소통, 정서조절"></div>
+        </div>
+        <div class="mo-row" style="margin-top:12px"><label>① 조건 — 어떤 상황에서</label><input id="gmCond" value="${esc(d0.cond||'')}" oninput="goalLiveCheck()" placeholder="예: 그림카드 3장이 제시되면"></div>
+        <div class="mo-row"><label>② 행동 — 눈으로 보고 셀 수 있는 행동</label><input id="gmBeh" value="${esc(d0.beh||'')}" oninput="goalLiveCheck()" placeholder="예: 원하는 카드를 골라 건넨다"></div>
+        <div class="mo-row"><label>③ 기준 — 얼마나 (수치 포함)</label><input id="gmCrit" value="${esc(d0.crit||'')}" oninput="goalLiveCheck()" placeholder="예: 10회 중 8회 이상, 3회기 연속"></div>
+        <div id="gmCheck" style="margin:-6px 0 10px;font-size:12.5px"></div>
+        <button type="button" class="btn-gray btn-sm" onclick="fillGoalPreset()">💡 이 서비스의 예시 문장 채우기</button>
+        <div class="ov-grid" style="margin-top:14px">
+          <div><label>측정 단위</label><select id="gmUnit">${UNITS.map(u=>`<option ${u===d0.unit?'selected':''}>${u}</option>`).join('')}</select></div>
+          <div><label>방향</label><select id="gmDir"><option value="up" ${d0.dir!=='down'?'selected':''}>값이 커질수록 좋음</option><option value="down" ${d0.dir==='down'?'selected':''}>값이 작아질수록 좋음</option></select></div>
+          <div><label>시작 수준 (현재 값)</label><input type="number" step="any" id="gmBase" value="${esc(d0.baseline)}"></div>
+          <div><label>목표 수준</label><input type="number" step="any" id="gmTarget" value="${esc(d0.target)}"></div>
+          <div><label>시작일</label><input type="date" id="gmStart" value="${esc(d0.startDate||'')}"></div>
+          <div><label>목표일</label><input type="date" id="gmEnd" value="${esc(d0.targetDate||'')}"></div>
+          <div><label>상태</label><select id="gmStatus">${['진행','달성','보류','수정 필요'].map(s=>`<option ${s===(d0.status||'진행')?'selected':''}>${s}</option>`).join('')}</select></div>
+          <div><label>학부모 포털 공유</label><select id="gmShared"><option value="1" ${d0.shared!==false?'selected':''}>공유</option><option value="0" ${d0.shared===false?'selected':''}>공유 안 함</option></select></div>
+        </div>
+        <p class="hint">* 시작 수준·목표 수준·시작일·목표일을 모두 넣어야 목표선과 진전도 경고가 작동합니다.</p>
+        <div class="mo-foot"><button class="btn-gray" onclick="closeModal()">취소</button><button class="btn-primary" onclick="saveGoal(${g?`'${g.id}'`:'null'})">저장</button></div>`);
+      goalLiveCheck();
+    }
+    function goalLiveCheck(){
+      const el=document.getElementById('gmCheck'); if(!el) return;
+      const m=goalMissing({cond:document.getElementById('gmCond').value.trim(), beh:document.getElementById('gmBeh').value.trim(), crit:document.getElementById('gmCrit').value.trim()});
+      el.className = m.length?'chk-bad':'chk-ok';
+      el.innerText = m.length ? '✗ 빠진 요소: '+m.join(', ') : '✓ 조건 · 행동 · 기준이 모두 들어 있습니다';
+    }
+    function fillGoalPreset(){
+      const id=document.getElementById('gmSvc').value; const pr=GOAL_PRESETS[id];
+      if(!pr) return toast('먼저 서비스를 고르세요(예시가 없는 서비스는 직접 입력).', true);
+      const filled=['gmCond','gmBeh','gmCrit'].some(k=>document.getElementById(k).value.trim());
+      if(filled && !confirm('입력한 내용을 예시 문장으로 바꿀까요?')) return;
+      document.getElementById('gmDomain').value=pr.domain; document.getElementById('gmCond').value=pr.cond; document.getElementById('gmBeh').value=pr.beh; document.getElementById('gmCrit').value=pr.crit;
+      document.getElementById('gmUnit').value=pr.unit; document.getElementById('gmDir').value=pr.dir;
+      goalLiveCheck(); toast('예시를 채웠습니다. 내담자에게 맞게 꼭 고쳐 주세요.');
+    }
+    function saveGoal(id){
+      const st=getStudent(curStudent); st.goals=st.goals||[];
+      const num = v => v===''?'':Number(v);
+      const o = { service:document.getElementById('gmSvc').value, domain:document.getElementById('gmDomain').value.trim(),
+        cond:document.getElementById('gmCond').value.trim(), beh:document.getElementById('gmBeh').value.trim(), crit:document.getElementById('gmCrit').value.trim(),
+        unit:document.getElementById('gmUnit').value, dir:document.getElementById('gmDir').value,
+        baseline:num(document.getElementById('gmBase').value), target:num(document.getElementById('gmTarget').value),
+        startDate:document.getElementById('gmStart').value, targetDate:document.getElementById('gmEnd').value,
+        status:document.getElementById('gmStatus').value, shared:document.getElementById('gmShared').value==='1' };
+      if(!o.beh) return toast('② 행동은 꼭 입력해 주세요', true);
+      if(o.startDate && o.targetDate && o.targetDate<=o.startDate) return toast('목표일은 시작일보다 뒤여야 합니다', true);
+      if(id){ const g=st.goals.find(x=>x.id===id); if(g) Object.assign(g,o); }
+      else st.goals.push({ id:'g'+Date.now(), points:[], ...o });
+      closeModal(); saveStudent(curStudent); toast('목표를 저장했습니다');
+    }
+    function addGoalPoint(gid){
+      const g=(getStudent(curStudent).goals||[]).find(x=>x.id===gid); if(!g) return;
+      const d=document.getElementById('gpD_'+gid).value, v=document.getElementById('gpV_'+gid).value, n=document.getElementById('gpN_'+gid).value.trim();
+      if(!d || v==='' || isNaN(Number(v))) return toast('날짜와 측정값(숫자)을 입력하세요', true);
+      g.points=g.points||[]; g.points.push({ id:'p'+Date.now(), d, v:Number(v), note:n });
+      saveStudent(curStudent);
+      const w=progressWarning(g); toast(w?'⚠️ 저장됨 — 진전도 경고가 떴습니다. 목표를 확인하세요':'측정값을 추가했습니다');
+    }
+    function delGoalPoint(gid,pid){ const g=(getStudent(curStudent).goals||[]).find(x=>x.id===gid); if(!g||!confirm('이 측정값을 지울까요?')) return; g.points=(g.points||[]).filter(p=>p.id!==pid); saveStudent(curStudent); }
+    function delGoal(gid){ if(!confirm('목표와 측정 기록이 모두 삭제됩니다. 계속할까요?')) return; const st=getStudent(curStudent); st.goals=(st.goals||[]).filter(g=>g.id!==gid); saveStudent(curStudent); }
+    function setGoalStatus(gid, s){ const g=(getStudent(curStudent).goals||[]).find(x=>x.id===gid); if(!g) return; g.status=s; saveStudent(curStudent); toast(`상태를 '${s}'(으)로 바꿨습니다`); }
+    function parentGoals(sid){
+      const st=getStudent(sid); if(!st) return [];
+      return (st.goals||[]).filter(g=>g.shared!==false && g.status!=='보류').map(g=>{ const pts=sortedPts(g); const last=pts[pts.length-1];
+        return { service:svcName(g.service), color:svcColor(g.service), cond:g.cond||'', beh:g.beh||'', crit:g.crit||'', unit:g.unit||'', baseline:dv(g.baseline), target:dv(g.target), latest: last?last.v:'-', latestDate: last?last.d:'', status: g.status==='달성'?'done':(progressWarning(g)?'adjust':'going'), pct: goalPct(g) }; });
+    }
+    function goalSummaryForReport(sid, days){
+      const st=getStudent(sid); if(!st) return [];
+      return (st.goals||[]).map(g=>{ const pts=sortedPts(g).filter(p=>inPeriod(p.d,days)); const last=pts[pts.length-1];
+        return { g, n:pts.length, last, warn: (g.status!=='달성'&&g.status!=='보류') && !!progressWarning(g), pct: goalPct(g) }; });
+    }
+
+    // ==================== V16: 뉴로피드백 ====================
+    const NF_PROTOCOLS=['SMR 강화(12–15Hz) / Theta 억제','Beta 강화(15–18Hz) / Theta 억제','Theta/Beta 비율(TBR) 훈련','Alpha 강화(8–12Hz)','Alpha/Theta 훈련','SCP(서파전위) 훈련','기타'];
+    const NF_SITES=['Cz','C3','C4','Fz','Pz','F3','F4','Fp1','Fp2','O1','O2','기타'];
+    let editingNfId=null;
+    function nfNum(v){ return (v===''||v===undefined||v===null||isNaN(Number(v)))?null:Number(v); }
+    function nfRows(sid){ const st=getStudent(sid); return ((st&&st.nf)||[]).slice().sort((a,b)=>(a.date||'').localeCompare(b.date||'')); }
+    function renderNf(){
+      const st=getStudent(curStudent); if(!st) return; st.nf=st.nf||[];
+      const pSel=document.getElementById('nfProto');
+      if(!pSel.options.length){ pSel.innerHTML=NF_PROTOCOLS.map(x=>`<option>${x}</option>`).join(''); document.getElementById('nfSite').innerHTML=NF_SITES.map(x=>`<option>${x}</option>`).join(''); }
+      if(!document.getElementById('nfDate').value) document.getElementById('nfDate').value=todayStr();
+      const rows=nfRows(curStudent);
+      const tb=document.querySelector('#nfTable tbody');
+      tb.innerHTML = rows.length ? rows.map((r,i)=>({r,no:i+1})).reverse().map(({r,no})=>`<tr><td><b>${no}</b></td><td>${esc(r.date)}</td><td style="font-size:12px">${esc(r.proto)}</td><td>${esc(r.site)}</td><td>${esc(dv(r.min))}</td><td>${nfNum(r.reward)===null?'-':esc(r.reward)+'%'}</td><td>${esc(dv(r.tbrPre))} → <b>${esc(dv(r.tbrPost))}</b></td><td style="text-align:left;font-size:12px">${esc(r.note||'')}</td><td><span onclick="editNf('${r.id}')" style="cursor:pointer;margin-right:8px" title="수정">✎</span><span onclick="delNf('${r.id}')" style="color:red;cursor:pointer" title="삭제">✕</span></td></tr>`).join('') : '<tr class="empty-row"><td colspan="9">아직 회기 기록이 없습니다.</td></tr>';
+      document.getElementById('nfAna').innerHTML = nfAnalysis(rows);
+      if(charts.nf) charts.nf.destroy();
+      charts.nf = new Chart(document.getElementById('nfChart'), { data:{ labels: rows.map((r,i)=>`${i+1}회 (${koDate(r.date)})`), datasets:[
+          { type:'bar', label:'보상률(%)', data:rows.map(r=>nfNum(r.reward)), backgroundColor:'rgba(142,68,173,0.22)', yAxisID:'y1' },
+          { type:'line', label:'TBR 시작', data:rows.map(r=>nfNum(r.tbrPre)), borderColor:'#95a5a6', borderDash:[5,4], yAxisID:'y', spanGaps:true, tension:0.2 },
+          { type:'line', label:'TBR 종료', data:rows.map(r=>nfNum(r.tbrPost)), borderColor:'#8e44ad', yAxisID:'y', spanGaps:true, tension:0.2 }
+        ]}, options:{ responsive:true, maintainAspectRatio:false, scales:{ y:{position:'left', title:{display:true,text:'TBR (θ/β)'}}, y1:{position:'right', min:0, max:100, grid:{drawOnChartArea:false}, title:{display:true,text:'보상률 %'}} } } });
+    }
+    function nfAnalysis(rows){
+      if(!rows.length) return '기록이 쌓이면 자동으로 분석됩니다.';
+      const totalMin = rows.reduce((a,r)=>a+(nfNum(r.min)||0),0);
+      const protoCnt={}; rows.forEach(r=>protoCnt[r.proto]=(protoCnt[r.proto]||0)+1);
+      let h = `총 <b>${rows.length}회기</b> · 누적 훈련 ${totalMin}분 · ${Object.entries(protoCnt).map(([k,v])=>esc(k)+' '+v+'회').join(', ')}`;
+      if(rows.length<4) return h + `<br><span style="color:#888">추이 분석은 4회기 이상부터 제공합니다.</span>`;
+      const k=Math.min(5, Math.floor(rows.length/2)); const first=rows.slice(0,k), last=rows.slice(-k);
+      const av=(arr,f)=>{ const v=arr.map(f).map(nfNum).filter(x=>x!==null); return v.length?mean(v):null; };
+      const r1=av(first,r=>r.reward), r2=av(last,r=>r.reward), t1=av(first,r=>r.tbrPost), t2=av(last,r=>r.tbrPost);
+      const inSess=av(rows,r=>(nfNum(r.tbrPre)!==null&&nfNum(r.tbrPost)!==null)?(r.tbrPre-r.tbrPost):null);
+      if(r1!==null && r2!==null){ const d=r2-r1; h += `<br>· 보상률: 초기 ${k}회 평균 <b>${r1.toFixed(0)}%</b> → 최근 ${k}회 <b>${r2.toFixed(0)}%</b> (${d>=0?'+':''}${d.toFixed(0)}%p) — ${d>=5?'✅ 목표 뇌파 상태를 유지하는 시간이 늘고 있습니다.':d<=-5?'⚠️ 감소 — 역치(threshold) 설정·회기 컨디션을 점검하세요.':'➖ 큰 변화 없음 — 역치 조정 시점을 검토하세요.'}`; }
+      if(t1!==null && t2!==null){ const pc=pctChange(t1,t2); h += `<br>· 종료 시 TBR: <b>${t1.toFixed(2)}</b> → <b>${t2.toFixed(2)}</b> (${pc>0?'+':''}${pc}%) — ${pc<=-10?'✅ 감소 — 각성·주의 조절이 개선되는 방향입니다.':pc>=10?'⚠️ 증가 — 수면·피로·복약 변화와 프로토콜 적합성을 확인하세요.':'➖ 큰 변화 없음'}`; }
+      if(inSess!==null) h += `<br>· 회기 안 변화(시작→종료 TBR) 평균 <b>${inSess>=0?'−':'+'}${Math.abs(inSess).toFixed(2)}</b>`;
+      return h + `<br><span style="color:#888;font-size:12px">※ 뉴로피드백 지표는 장비·전극 위치·컨디션에 따라 변동이 큽니다. 행동 관찰·치료 목표 달성도와 함께 해석하세요.</span>`;
+    }
+    function nfSummary(sid, days){
+      const rows=nfRows(sid).filter(r=>inPeriod(r.date,days)); if(!rows.length) return null;
+      const k=Math.min(5, Math.floor(rows.length/2)) || 1;
+      const av=(arr,f)=>{ const v=arr.map(f).map(nfNum).filter(x=>x!==null); return v.length?mean(v):null; };
+      return { n:rows.length, min: rows.reduce((a,r)=>a+(nfNum(r.min)||0),0), r1:av(rows.slice(0,k),r=>r.reward), r2:av(rows.slice(-k),r=>r.reward), t1:av(rows.slice(0,k),r=>r.tbrPost), t2:av(rows.slice(-k),r=>r.tbrPost), protos:[...new Set(rows.map(r=>r.proto))] };
+    }
+    function saveNf(){
+      const st=getStudent(curStudent); st.nf=st.nf||[];
+      const g=id=>document.getElementById(id).value; const n=id=>g(id)===''?'':Number(g(id));
+      const o={ date:g('nfDate'), proto:g('nfProto'), site:g('nfSite'), min:n('nfMin'), reward:n('nfReward'), tbrPre:n('nfTbrPre'), tbrPost:n('nfTbrPost'), note:g('nfNote').trim() };
+      if(!o.date) return toast('날짜를 입력하세요', true);
+      if(o.reward!=='' && (o.reward<0||o.reward>100)) return toast('보상률은 0~100 사이로 입력하세요', true);
+      if(editingNfId){ const r=st.nf.find(x=>x.id===editingNfId); if(r) Object.assign(r,o); }
+      else st.nf.push({ id:'n'+Date.now(), ...o });
+      cancelNf(); saveStudent(curStudent); toast('뉴로피드백 회기를 저장했습니다');
+    }
+    function editNf(id){
+      const r=(getStudent(curStudent).nf||[]).find(x=>x.id===id); if(!r) return; editingNfId=id;
+      const s=(k,v)=>document.getElementById(k).value=(v===undefined||v===null)?'':v;
+      s('nfDate',r.date); s('nfProto',r.proto); s('nfSite',r.site); s('nfMin',r.min); s('nfReward',r.reward); s('nfTbrPre',r.tbrPre); s('nfTbrPost',r.tbrPost); s('nfNote',r.note);
+      const b=document.getElementById('btnNf'); b.innerText='수정 저장'; b.className='btn-orange'; document.getElementById('btnNfCancel').style.display='inline-block';
+    }
+    function cancelNf(){ editingNfId=null; ['nfMin','nfReward','nfTbrPre','nfTbrPost','nfNote'].forEach(k=>{ const e=document.getElementById(k); if(e) e.value=''; }); const b=document.getElementById('btnNf'); if(b){ b.innerText='추가'; b.className='btn-primary'; } const c=document.getElementById('btnNfCancel'); if(c) c.style.display='none'; }
+    function delNf(id){ if(!confirm('이 회기 기록을 지울까요?')) return; const st=getStudent(curStudent); st.nf=(st.nf||[]).filter(x=>x.id!==id); saveStudent(curStudent); }
+
+    // ==================== V16: 심리치료 · 상담 (SOAP, 학부모 비공개) ====================
+    const PSY_TECH=['인지행동(CBT)','놀이치료','미술치료','모래놀이','정서조절','이완·호흡','마음챙김','사회기술','문제해결','부모교육','가족상담','기타'];
+    let editingPsyId=null; let psySelTech=new Set();
+    function riskCls(r){ return {'높음':'risk-high','중간':'risk-mid','낮음':'risk-low'}[r]||'risk-none'; }
+    function renderPsyTech(){ document.getElementById('psTech').innerHTML = PSY_TECH.map(t=>`<button type="button" class="chip-btn ${psySelTech.has(t)?'on':''}" onclick="togglePsyTech(this,'${t}')">${t}</button>`).join(''); }
+    function togglePsyTech(el,t){ if(psySelTech.has(t)) psySelTech.delete(t); else psySelTech.add(t); el.classList.toggle('on'); }
+    function psyRows(sid){ const st=getStudent(sid); return ((st&&st.psy)||[]).slice().sort((a,b)=>(a.date||'').localeCompare(b.date||'')); }
+    function renderPsy(){
+      const st=getStudent(curStudent); if(!st) return; st.psy=st.psy||[];
+      renderPsyTech();
+      if(!document.getElementById('psDate').value) document.getElementById('psDate').value=todayStr();
+      const asc=psyRows(curStudent);
+      document.getElementById('psySessNo').innerText = editingPsyId ? '수정 중' : `이번이 ${asc.length+1}회기`;
+      const l=document.getElementById('psyList');
+      l.innerHTML = asc.length ? asc.map((x,i)=>({x,no:i+1})).reverse().map(({x,no})=>{ const hi=x.risk==='중간'||x.risk==='높음';
+        return `<div class="log-entry" style="border-left-color:${hi?'#8e44ad':'#16a085'}">
+          <div class="log-header"><span><b style="color:var(--brand)">${no}회기</b> · 📅 ${esc(x.date)} · ${esc(x.type||'')}</span><span class="tag ${riskCls(x.risk)}">위험 ${esc(x.risk||'없음')}</span></div>
+          ${x.theme?`<div style="font-weight:800;color:var(--brand);margin-bottom:6px">${esc(x.theme)}</div>`:''}
+          ${(x.tech&&x.tech.length)?`<div class="chips" style="margin-bottom:6px">${x.tech.map(t=>`<span class="tag purple">${esc(t)}</span>`).join('')}</div>`:''}
+          ${(!emptyV(x.moodPre)||!emptyV(x.moodPost))?`<div style="font-size:13px;color:#555">고통 점수(SUDS) ${esc(dv(x.moodPre))} → <b>${esc(dv(x.moodPost))}</b></div>`:''}
+          ${hi&&x.riskNote?`<div class="chk-bad" style="margin-top:4px">⚠ ${esc(x.riskNote)}</div>`:''}
+          <details style="margin-top:6px"><summary style="cursor:pointer;font-size:13px;color:#555">SOAP 기록 보기</summary><div class="soap-view"><div><b>S</b>${esc(x.S||'-')}</div><div><b>O</b>${esc(x.O||'-')}</div><div><b>A</b>${esc(x.A||'-')}</div><div><b>P</b>${esc(x.P||'-')}</div></div></details>
+          <div style="text-align:right;font-size:12px;color:#aaa"><span style="cursor:pointer" onclick="editPsy('${x.id}')">수정</span> · <span style="cursor:pointer" onclick="delPsy('${x.id}')">삭제</span></div></div>`; }).join('') : '<div style="text-align:center;color:#999;padding:30px">아직 회기 기록이 없습니다.</div>';
+      const hasMood = asc.some(x=>!emptyV(x.moodPre)||!emptyV(x.moodPost));
+      document.getElementById('psyChartCard').style.display = hasMood?'block':'none';
+      if(charts.psy){ charts.psy.destroy(); charts.psy=null; }
+      if(hasMood) charts.psy = new Chart(document.getElementById('psyChart'), { type:'line', data:{ labels: asc.map((x,i)=>`${i+1}회`), datasets:[
+          { label:'회기 시작', data:asc.map(x=>nfNum(x.moodPre)), borderColor:'#95a5a6', borderDash:[5,4], spanGaps:true },
+          { label:'회기 종료', data:asc.map(x=>nfNum(x.moodPost)), borderColor:'#16a085', spanGaps:true } ]},
+        options:{ responsive:true, maintainAspectRatio:false, scales:{ y:{ min:0, max:10, title:{display:true,text:'SUDS (높을수록 힘듦)'} } } } });
+    }
+    function savePsy(){
+      const st=getStudent(curStudent); st.psy=st.psy||[];
+      const g=id=>document.getElementById(id).value; const n=id=>g(id)===''?'':Number(g(id));
+      const o={ date:g('psDate'), type:g('psType'), theme:g('psTheme').trim(), tech:[...psySelTech], moodPre:n('psMoodPre'), moodPost:n('psMoodPost'), risk:g('psRisk'), riskNote:g('psRiskNote').trim(), S:g('psS').trim(), O:g('psO').trim(), A:g('psA').trim(), P:g('psP').trim() };
+      if(!o.date) return toast('날짜를 입력하세요', true);
+      if([o.moodPre,o.moodPost].some(v=>v!=='' && (v<0||v>10))) return toast('고통 점수(SUDS)는 0~10으로 입력하세요', true);
+      if((o.risk==='중간'||o.risk==='높음') && !o.riskNote) return toast('위기 위험이 중간 이상이면 「위험 관련 메모·조치」를 꼭 적어 주세요', true);
+      if(editingPsyId){ const r=st.psy.find(x=>x.id===editingPsyId); if(r) Object.assign(r,o); }
+      else st.psy.push({ id:'ps'+Date.now(), ...o });
+      cancelPsy(); saveStudent(curStudent);
+      toast(o.risk==='높음'?'🚨 저장됨 — 위기 위험 「높음」: 안전계획·보호자/기관 연계를 오늘 안에 진행하세요':'회기 기록을 저장했습니다', o.risk==='높음');
+    }
+    function editPsy(id){
+      const r=(getStudent(curStudent).psy||[]).find(x=>x.id===id); if(!r) return; editingPsyId=id;
+      const s=(k,v)=>document.getElementById(k).value=(v===undefined||v===null)?'':v;
+      s('psDate',r.date); s('psType',r.type); s('psTheme',r.theme); s('psMoodPre',r.moodPre); s('psMoodPost',r.moodPost); s('psRisk',r.risk||'없음'); s('psRiskNote',r.riskNote); s('psS',r.S); s('psO',r.O); s('psA',r.A); s('psP',r.P);
+      psySelTech=new Set(r.tech||[]); renderPsyTech();
+      document.getElementById('btnPsy').innerText='수정 저장'; document.getElementById('btnPsyCancel').style.display='inline-block';
+      document.getElementById('psySessNo').innerText='수정 중'; document.getElementById('contentArea').scrollTop=0;
+    }
+    function cancelPsy(){
+      editingPsyId=null; psySelTech=new Set();
+      ['psTheme','psMoodPre','psMoodPost','psRiskNote','psS','psO','psA','psP'].forEach(k=>{ const e=document.getElementById(k); if(e) e.value=''; });
+      const r=document.getElementById('psRisk'); if(r) r.value='없음';
+      const b=document.getElementById('btnPsy'); if(b) b.innerText='저장'; const c=document.getElementById('btnPsyCancel'); if(c) c.style.display='none';
+      const t=document.getElementById('psTech'); if(t) renderPsyTech();
+    }
+    function delPsy(id){ if(!confirm('이 회기 기록을 지울까요?')) return; const st=getStudent(curStudent); st.psy=(st.psy||[]).filter(x=>x.id!==id); saveStudent(curStudent); }
+    function psySummary(sid, days){
+      const rows=psyRows(sid).filter(r=>inPeriod(r.date,days)); if(!rows.length) return null;
+      const pre=rows.map(r=>nfNum(r.moodPre)).filter(x=>x!==null), post=rows.map(r=>nfNum(r.moodPost)).filter(x=>x!==null);
+      const tech={}; rows.forEach(r=>(r.tech||[]).forEach(t=>tech[t]=(tech[t]||0)+1));
+      return { n:rows.length, firstPost: post.length?post[0]:null, lastPost: post.length?post[post.length-1]:null, avgDrop: (pre.length&&post.length)?mean(rows.filter(r=>nfNum(r.moodPre)!==null&&nfNum(r.moodPost)!==null).map(r=>r.moodPre-r.moodPost)):null, tech:Object.entries(tech).sort((a,b)=>b[1]-a[1]).slice(0,4).map(x=>x[0]) };
+    }
+
+    // ==================== V16: 한눈에 보기 (홈 대시보드) ====================
+    function renderDashboard(){
+      const w=document.getElementById('dashWrap'); if(!w || !db || !db.students) return;
+      const today=todayStr();
+      const link = (sid,tab) => `<a class="dlink" onclick="openStudentTab('${sid}','${tab}')">${esc(getStudentName(sid,true))}</a>`;
+      const mine = sid => !calTher || prof(sid).therapist===calTher || db.schedule.some(s=>s.sid===sid && s.therapist===calTher);
+      const todays=db.schedule.filter(s=>s.date===today && (!calTher||s.therapist===calTher)).sort((a,b)=>(a.time||'').localeCompare(b.time||''));
+      const warnList=[], dueList=[], riskList=[], reachList=[];
+      Object.keys(db.students).forEach(sid=>{
+        if(!mine(sid)) return;
+        const st=db.students[sid];
+        (st.goals||[]).forEach(g=>{
+          if(g.status==='달성'||g.status==='보류') return;
+          if(progressWarning(g)) warnList.push({sid,g});
+          else if(goalReachedRun(g)) reachList.push({sid,g});
+          if(g.targetDate){ const dd=dayDiff(today,g.targetDate); if(dd<=14) dueList.push({sid,g,dd}); }
+        });
+        const ps=psyRows(sid).filter(x=>inPeriod(x.date,30)).pop();
+        if(ps && (ps.risk==='중간'||ps.risk==='높음')) riskList.push({sid,ps});
+      });
+      dueList.sort((a,b)=>a.dd-b.dd);
+      const ym=today.slice(0,7);
+      const monthAll=db.schedule.filter(s=>(s.date||'').startsWith(ym) && (!calTher||s.therapist===calTher));
+      const doneM=monthAll.filter(s=>s.status==='present'||s.status==='makeup');
+      const absM=monthAll.filter(s=>s.status==='absent').length;
+      const bySvc={}, byTh={}; doneM.forEach(s=>{ bySvc[s.service||'']=(bySvc[s.service||'']||0)+1; byTh[s.therapist||'']=(byTh[s.therapist||'']||0)+1; });
+      const maxS=Math.max(1,...Object.values(bySvc)), maxT=Math.max(1,...Object.values(byTh));
+      const empty = t => `<div class="dash-empty">${t}</div>`;
+      const d=new Date(); const wk=['일','월','화','수','목','금','토'][d.getDay()];
+      const nm = me&&me.profile ? (me.profile.name||'') : '';
+      w.innerHTML = `
+      <div class="dash-head"><div><h2>👋 ${esc(nm)} 선생님, 오늘 수업 ${todays.length}건${calTher?' <small>('+esc(thName(calTher))+' 선생님 기준)</small>':''}</h2><span>${d.getMonth()+1}월 ${d.getDate()}일 ${wk}요일 · 이번 달 진행 ${doneM.length}회기 · 결석 ${absM}회</span></div></div>
+      <div class="dash-grid">
+        <div class="dash-card"><h4>📅 오늘 수업 <span class="cnt">${todays.length}</span></h4>
+          ${todays.length?todays.map(s=>{ const b=stBadgeKo(s.status); return `<div class="dash-row"><b style="min-width:42px;color:#555">${esc(s.time||'')}</b><span class="svc-chip" style="background:${svcColor(s.service)}">${esc(svcName(s.service))}</span>${s.sid&&db.students[s.sid]?link(s.sid,'overview'):'-'}<span style="margin-left:auto;font-size:12px;color:#888">${esc(thName(s.therapist))}</span><span class="badge" style="background:${b[1]};cursor:pointer" onclick="toggleStatus(${s.id})" title="눌러서 출석 상태 변경">${b[0]}</span></div>`; }).join(''):empty('오늘 예정된 수업이 없습니다.')}
+        </div>
+        <div class="dash-card ${warnList.length?'warn':''}"><h4>⚠️ 진전도 경고 <span class="cnt">${warnList.length}</span></h4>
+          ${warnList.length?warnList.map(x=>`<div class="dash-row"><span class="svc-chip" style="background:${svcColor(x.g.service)}">${esc(svcName(x.g.service))}</span>${link(x.sid,'goals')}<span class="dash-sub">${esc(x.g.beh||'')}</span></div>`).join(''):empty('경고가 없습니다.')}
+          ${reachList.length?`<div style="margin-top:8px;font-size:12.5px;color:#1e8449">🎉 기준 도달(달성 처리 대기) ${reachList.length}건: ${reachList.map(x=>link(x.sid,'goals')).join(', ')}</div>`:''}
+        </div>
+        <div class="dash-card ${riskList.length?'risk':''}"><h4>🚨 위기 위험 확인 <span class="cnt">${riskList.length}</span></h4>
+          ${riskList.length?riskList.map(x=>`<div class="dash-row"><span class="tag ${riskCls(x.ps.risk)}">${esc(x.ps.risk)}</span>${link(x.sid,'psy')}<span class="dash-sub">${esc(koDate(x.ps.date))} · ${esc(x.ps.riskNote||'')}</span></div>`).join(''):empty('최근 30일 심리치료·상담 기록에 중간 이상 위험이 없습니다.')}
+        </div>
+        <div class="dash-card"><h4>⏰ 목표 기한 (2주 이내·지남) <span class="cnt">${dueList.length}</span></h4>
+          ${dueList.length?dueList.map(x=>`<div class="dash-row"><span class="tag ${x.dd<0?'warn':'info'}">${ddayTxt(x.g.targetDate)}</span>${link(x.sid,'goals')}<span class="dash-sub">${esc(x.g.beh||'')}</span></div>`).join(''):empty('2주 안에 기한이 다가오는 목표가 없습니다.')}
+        </div>
+        <div class="dash-card"><h4>📊 이번 달 서비스별 회기 <span class="cnt">${doneM.length}</span></h4>
+          ${Object.keys(bySvc).length?Object.entries(bySvc).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div class="bar-row"><span>${esc(svcName(k))}</span><div class="prog"><i style="width:${v/maxS*100}%;background:${svcColor(k)}"></i></div><b>${v}</b></div>`).join(''):empty('이번 달 출석·보강 기록이 아직 없습니다.')}
+        </div>
+        <div class="dash-card"><h4>👩‍⚕️ 이번 달 치료사별 회기</h4>
+          ${Object.keys(byTh).length?Object.entries(byTh).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div class="bar-row"><span>${esc(thName(k)||'미지정')}</span><div class="prog"><i style="width:${v/maxT*100}%;background:var(--brand)"></i></div><b>${v}</b></div>`).join(''):empty('치료사가 지정된 출석 기록이 없습니다.')}
+          <p class="hint">* 출석·보강 처리된 회기만 셉니다. 일정에 담당 치료사를 넣으면 집계됩니다.</p>
+        </div>
+      </div>`;
+    }
+    function setCalTher(v){ calTher=v; renderCalendar(); renderDashboard(); }
+    function fillTherFilter(){ const s=document.getElementById('calTherSel'); if(!s) return; s.innerHTML = thOptions(calTher, true, '👩‍⚕️ 전체 치료사'); }
+
+    // ==================== V16: 설정 → 센터 설정 탭 ====================
+    function renderCenterTab(){
+      const body=document.getElementById('setBody'); if(!body) return;
+      const c=center(); syncTherapistsFromUsers();
+      body.innerHTML = `
+      <p class="hint" style="margin-bottom:12px;">센터에서 제공하는 <b>서비스(치료 종류)</b>와 <b>치료사</b>를 관리합니다. 일정·목표·통계에 쓰입니다. 승인된 교사 계정은 치료사 목록에 자동으로 추가됩니다.</p>
+      <div style="font-weight:800;color:var(--brand);margin:6px 0 8px">🧩 서비스</div>
+      <table><thead><tr><th>색</th><th>이름</th><th>관리</th></tr></thead><tbody>
+      ${c.services.map(s=>`<tr><td><input type="color" value="${esc(s.color)}" onchange="editSvc('${s.id}','color',this.value)" style="width:40px;height:30px;padding:0;border:none"></td><td><input value="${esc(s.name)}" onchange="editSvc('${s.id}','name',this.value)" style="width:100%;box-sizing:border-box"></td><td><button class="btn-red btn-sm" onclick="delSvc('${s.id}')">삭제</button></td></tr>`).join('')}
+      </tbody></table>
+      <div class="input-row" style="margin-top:8px"><input id="newSvcName" placeholder="새 서비스 이름 (예: 언어치료)" style="flex:1"><input type="color" id="newSvcColor" value="#2980b9" style="width:44px;height:38px;padding:2px"><button class="btn-green btn-sm" onclick="addSvc()">추가</button></div>
+      <div style="font-weight:800;color:var(--brand);margin:18px 0 8px">👩‍⚕️ 치료사</div>
+      <table><thead><tr><th>이름</th><th>구분</th><th>관리</th></tr></thead><tbody>
+      ${c.therapists.length?c.therapists.map(t=>`<tr><td><input value="${esc(t.name)}" onchange="editTher('${t.id}',this.value)" style="width:100%;box-sizing:border-box"></td><td style="font-size:12px;color:#888">${usersMap&&usersMap[t.id]?'로그인 계정':'이름만 등록'}</td><td><button class="btn-red btn-sm" onclick="delTher('${t.id}')">삭제</button></td></tr>`).join(''):'<tr class="empty-row"><td colspan="3">등록된 치료사가 없습니다.</td></tr>'}
+      </tbody></table>
+      <div class="input-row" style="margin-top:8px"><input id="newTherName" placeholder="치료사 이름 (계정 없이 이름만 등록)" style="flex:1"><button class="btn-green btn-sm" onclick="addTher()">추가</button></div>
+      <div style="font-weight:800;color:var(--brand);margin:18px 0 8px">⚠️ 진전도 경고 기준</div>
+      <div class="input-row"><span style="font-size:14px">측정값이 목표선 아래로</span><input type="number" min="2" max="6" id="warnRunIn" value="${c.warnRun||3}" style="width:70px"><span style="font-size:14px">회 연속이면 경고</span><button class="btn-primary btn-sm" onclick="saveWarnRun()">저장</button></div>`;
+    }
+    function editSvc(id,k,v){ const s=svc(id); if(!s) return; s[k]=k==='name'?v.trim()||s.name:v; saveCenter(); toast('서비스를 고쳤습니다'); }
+    function delSvc(id){ if(!confirm('이 서비스를 목록에서 지울까요? (기존 기록은 남고 「미지정」처럼 보일 수 있습니다)')) return; center().services=center().services.filter(s=>s.id!==id); saveCenter(); renderCenterTab(); }
+    function addSvc(){ const n=document.getElementById('newSvcName').value.trim(); if(!n) return toast('서비스 이름을 입력하세요', true); center().services.push({id:'sv'+Date.now(), name:n, color:document.getElementById('newSvcColor').value}); saveCenter(); renderCenterTab(); }
+    function editTher(id,v){ const t=center().therapists.find(x=>x.id===id); if(!t||!v.trim()) return; t.name=v.trim(); t.custom=true; saveCenter(); toast('치료사 이름을 고쳤습니다'); }
+    function delTher(id){ if(!confirm('치료사를 목록에서 지울까요? (계정은 그대로이며, 승인된 계정이면 다시 자동 추가될 수 있습니다)')) return; center().therapists=center().therapists.filter(t=>t.id!==id); saveCenter(); renderCenterTab(); }
+    function addTher(){ const n=document.getElementById('newTherName').value.trim(); if(!n) return toast('이름을 입력하세요', true); center().therapists.push({id:'th'+Date.now(), name:n, custom:true}); saveCenter(); renderCenterTab(); }
+    function saveWarnRun(){ const v=Math.max(2,Math.min(6,Number(document.getElementById('warnRunIn').value)||3)); center().warnRun=v; saveCenter(); toast(`목표선 아래 ${v}회 연속이면 경고합니다`); }
+
+    // ==================== V16: 일정 모달 (서비스·치료사 포함) ====================
+    function schedModalHtml(s, isNew){
+      const p = s.sid ? prof(s.sid) : {services:[]};
+      return `<h3>${isNew?'＋ 수업 일정 추가':'✎ 일정 수정'}</h3>
+        <div class="mo-row"><label>내담자</label><select id="mSchedStudent" onchange="schedStudentChanged()">${Object.keys(db.students).map(sid=>`<option value="${sid}" ${sid===s.sid?'selected':''}>${esc(getStudentName(sid, true))}</option>`).join('')}</select></div>
+        <div class="ov-grid">
+          <div><label>서비스</label><select id="mSchedSvc">${svcOptions(s.service || p.services[0] || '')}</select></div>
+          <div><label>담당 치료사</label><select id="mSchedTher">${thOptions(s.therapist || p.therapist || '')}</select></div>
+          <div><label>날짜</label><input type="date" id="mSchedDate" value="${esc(s.date||todayStr())}"></div>
+          <div><label>시간</label><input type="time" id="mSchedTime" value="${esc(s.time||'14:00')}"></div>
+          <div><label>회기 시간(분)</label><input type="number" id="mSchedDur" value="${esc(s.dur||50)}" min="10" step="5"></div>
+          ${isNew?`<div><label>반복</label><select id="mSchedRepeat"><option value="1">한 번만</option><option value="4">매주 4주</option><option value="8">매주 8주</option><option value="12">매주 12주</option></select></div>`:`<div><label>상태</label><select id="mSchedStatus">${['plan','present','absent','makeup'].map(k=>`<option value="${k}" ${s.status===k?'selected':''}>${stKo[k]}</option>`).join('')}</select></div>`}
+        </div>
+        <div id="mSchedClash" style="margin-top:10px;font-size:12.5px"></div>
+        <div class="mo-foot"><button class="btn-gray" onclick="closeModal()">취소</button><button class="${isNew?'btn-green':'btn-primary'}" onclick="saveScheduleItem(${isNew?'null':s.id})">${isNew?'추가':'저장'}</button></div>`;
+    }
+    function schedStudentChanged(){ const sid=document.getElementById('mSchedStudent').value; const p=prof(sid); if(p.services[0]) document.getElementById('mSchedSvc').value=p.services[0]; if(p.therapist) document.getElementById('mSchedTher').value=p.therapist; }
+    function schedClash(o, ignoreId){
+      if(!o.therapist || !o.time) return [];
+      const toMin = t => { const [h,m]=(t||'0:0').split(':').map(Number); return h*60+(m||0); };
+      const a1=toMin(o.time), a2=a1+(Number(o.dur)||50);
+      return db.schedule.filter(x=>x.id!==ignoreId && x.date===o.date && x.therapist===o.therapist && x.time).filter(x=>{ const b1=toMin(x.time), b2=b1+(Number(x.dur)||50); return a1<b2 && b1<a2; });
+    }
+
+
+    // ==================== V18: 접근 기록 (감사 로그) ====================
+    function nowStamp(){
+      const d = new Date();
+      return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+    }
+    function logAccess(kind, detail){
+      try{
+        if(!me || myRole()==='parent') return; // 학부모는 기록 대상·열람 모두 제외
+        db.accessLog = db.accessLog || [];
+        db.accessLog.unshift({ t: nowStamp(), uid:(me.uid||''), name:(me.profile&&(me.profile.name||me.profile.email))||'', role:myRole(), kind, detail: detail||'' });
+        if(db.accessLog.length>300) db.accessLog = db.accessLog.slice(0,300);
+        DB.set('accessLog', db.accessLog);
+      }catch(e){ /* 기록 실패가 본 기능을 막지 않도록 */ }
+    }
+    const ACCESS_TAG = {'로그인':'ok','로그아웃':'gray','학생 추가':'info','학생 삭제':'warn','실명 잠금 해제':'purple','실명 보기':'purple','백업 내려받기':'info','계정 승인':'ok','계정 삭제':'warn','역할 변경':'warn','기록 비우기':'warn'};
+    function renderAccessTab(){
+      const body=document.getElementById('setBody'); if(!body) return;
+      db.accessLog = db.accessLog || [];
+      const rows = db.accessLog.map(a=>`<tr><td style="white-space:nowrap;font-size:12.5px;">${esc(a.t)}</td><td>${esc(a.name||a.uid||'-')}</td><td><span class="tag ${ACCESS_TAG[a.kind]||'info'}">${esc(a.kind)}</span></td><td style="text-align:left;font-size:13px;">${esc(a.detail||'')}</td></tr>`).join('');
+      body.innerHTML = `<p class="hint" style="margin-bottom:10px;">* 로그인과 중요한 행위가 최근 <b>300건</b>까지 남습니다. 누가 언제 접속했고, 실명을 열었고, 학생을 추가·삭제했는지 확인할 수 있습니다. (학부모에게는 보이지 않습니다)</p>
+        <div style="text-align:right;margin-bottom:8px" class="no-print"><button class="btn-gray btn-sm" onclick="exportAccessCsv()">CSV 내려받기</button> <button class="btn-red btn-sm" onclick="clearAccessLog()">기록 비우기</button></div>
+        <div style="max-height:420px;overflow-y:auto;"><table><thead><tr><th>시각</th><th>이름</th><th>구분</th><th>내용</th></tr></thead><tbody>${rows||'<tr class="empty-row"><td colspan="4">아직 기록이 없습니다.</td></tr>'}</tbody></table></div>`;
+    }
+    function exportAccessCsv(){
+      const q = v => '"'+String(v==null?'':v).replace(/"/g,'""')+'"';
+      const lines = ['시각,이름,역할,구분,내용'].concat((db.accessLog||[]).map(a=>[a.t,a.name,a.role,a.kind,a.detail].map(q).join(',')));
+      const blob = new Blob(['\uFEFF'+lines.join('\r\n')], {type:'text/csv'});
+      const a = document.createElement('a'); a.href = URL.createObjectURL(blob);
+      a.download = `접근기록_${todayStr()}.csv`; a.click();
+      setTimeout(()=>URL.revokeObjectURL(a.href), 3000);
+      toast('CSV 파일을 내려받았습니다');
+    }
+    function clearAccessLog(){
+      if(!confirm('접근 기록을 모두 비울까요? (비운 사실 자체는 기록에 남습니다)')) return;
+      db.accessLog = [{ t: nowStamp(), uid:(me&&me.uid)||'', name:(me&&me.profile&&(me.profile.name||me.profile.email))||'', role:myRole(), kind:'기록 비우기', detail:'이전 기록을 삭제했습니다' }];
+      DB.set('accessLog', db.accessLog); renderAccessTab(); toast('접근 기록을 비웠습니다');
+    }
+
     const RULES = `{
   "rules": {
     "users": {
@@ -1725,6 +2618,7 @@
       ".write": "auth != null && root.child('users/'+auth.uid+'/approved').val() === true && root.child('users/'+auth.uid+'/role').val() !== 'parent'"
     },
     "parent_view": {
+      ".write": "auth != null && root.child('users/'+auth.uid+'/approved').val() === true && root.child('users/'+auth.uid+'/role').val() !== 'parent'",
       "$uid": {
         ".read": "auth != null && auth.uid === $uid && root.child('users/'+auth.uid+'/approved').val() === true",
         ".write": "auth != null && root.child('users/'+auth.uid+'/approved').val() === true && root.child('users/'+auth.uid+'/role').val() !== 'parent'"
@@ -1773,7 +2667,7 @@
         DB.getUser(user.uid).then(profile => {
             if(!profile){ showScreen('pending'); return; }
             me = { uid: user.uid, email: user.email, profile };
-            if(profile.approved){ if(myRole()==='parent') startParentApp(); else startApp(); } else { showScreen('pending'); }
+            if(profile.approved){ if(myRole()==='parent') startParentApp(); else { logAccess('로그인', (profile.role==='admin'?'관리자':'교사')+' 로그인'); startApp(); } } else { showScreen('pending'); }
         }).catch(()=>{ showScreen('pending'); });
     }
     try { AUTH.onChange(authHandler); }
@@ -1788,8 +2682,8 @@
     }
     function renderSettingsTab(){
         const nav=document.getElementById('setNav'); if(!nav) return;
-        const items=[ ['pendingList','👤 승인 관리'], ['parentLink','👨‍👩‍👧 학부모 연결'], ['sec','🔒 보안·암호'], ['ai','🤖 AI 설정'], ['backup','💾 백업/복원'], ['snippetMgmt','💬 문구 관리'] ];
-        nav.innerHTML = items.filter(([k])=> !['pendingList','sec','parentLink'].includes(k) || myRole()==='admin')
+        const items=[ ['pendingList','👤 승인 관리'], ['center','🏥 센터 설정'], ['parentLink','👨‍👩‍👧 학부모 연결'], ['sec','🔒 보안·암호'], ['ai','🤖 AI 설정'], ['backup','💾 백업/복원'], ['access','🕒 접근 기록'], ['snippetMgmt','💬 문구 관리'] ];
+        nav.innerHTML = items.filter(([k])=> !['pendingList','sec','parentLink','center','access'].includes(k) || myRole()==='admin')
             .map(([k,l])=>`<button class="${settingsTab===k?'on':''}" onclick="settingsTab='${k}';renderSettingsTab()">${l}</button>`).join('');
         const body=document.getElementById('setBody');
         if(settingsTab==='pendingList') return renderUsersTable();
@@ -1798,6 +2692,8 @@
         if(settingsTab==='backup') return renderBackupTab();
         if(settingsTab==='snippetMgmt') return renderSnippetTab();
         if(settingsTab==='parentLink') return renderParentLinkTab();
+        if(settingsTab==='center') return renderCenterTab();
+        if(settingsTab==='access') return renderAccessTab();
     }
     function renderUsersTable(){
         const body=document.getElementById('setBody'); if(!body) return;
@@ -1817,9 +2713,9 @@
             </td></tr>`).join('') : '<tr class="empty-row"><td colspan="5">등록된 계정이 없습니다.</td></tr>'}
         </tbody></table>`;
     }
-    function approveUser(uid){ DB.onUserChange(uid, {approved:true, role:'teacher'}).then(()=>{ toast('승인되었습니다'); renderUsersTable(); }); }
-    function setRole(uid, role){ DB.onUserChange(uid, {role}).then(()=>{ toast('역할이 변경되었습니다'); renderUsersTable(); }); }
-    function removeUser(uid){ if(confirm('이 계정을 삭제할까요?')){ DB.onUserChange(uid, null).then(()=>renderUsersTable()); } }
+    function approveUser(uid){ DB.onUserChange(uid, {approved:true, role:'teacher'}).then(()=>{ logAccess('계정 승인', (usersMap[uid]||{}).name||uid); toast('승인되었습니다'); renderUsersTable(); }); }
+    function setRole(uid, role){ DB.onUserChange(uid, {role}).then(()=>{ logAccess('역할 변경', ((usersMap[uid]||{}).name||uid)+' → '+(role==='admin'?'관리자':'교사')); toast('역할이 변경되었습니다'); renderUsersTable(); }); }
+    function removeUser(uid){ if(confirm('이 계정을 삭제할까요?')){ logAccess('계정 삭제', (usersMap[uid]||{}).name||uid); DB.onUserChange(uid, null).then(()=>renderUsersTable()); } }
     function renderSecTab(){
         const body=document.getElementById('setBody'); if(!body) return;
         const enabled = db.crypto && db.crypto.enabled;
@@ -1925,6 +2821,7 @@
         <p class="hint">* 복원은 현재 데이터를 백업 파일 내용으로 <b>덮어씁니다</b>. 신중히 실행하세요.</p>`;
     }
     function exportBackup(){
+        logAccess('백업 내려받기', '전체 데이터 JSON');
         const blob = new Blob([JSON.stringify(db, null, 1)], {type:'application/json'});
         const a = document.createElement('a');
         a.href = URL.createObjectURL(blob);
